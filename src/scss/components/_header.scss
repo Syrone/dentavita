@@ -1,0 +1,88 @@
+.header {
+	position: sticky;
+	top: var(--header-to-height, -2.25rem);
+	left: 0;
+	z-index: 1030;
+
+	&-top {
+		font-size: .875rem;
+		background-color: var(--gray-100);
+		padding-block: .5rem;
+
+		> .container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 1rem;
+		}
+		
+		&-start,
+		&-end {
+			display: flex;
+			align-items: center;
+			margin: 0;
+		}
+
+		&-start {
+			gap: .25em;
+
+			.icon {
+				--_size: 1.25rem;
+			}
+
+			.btn-inherit {
+				margin-right: .25em;
+			}
+		}
+
+		&-end {
+			gap: .5rem;
+		}
+	}
+
+	&-main {
+		width: 100%;
+		background-color: var(--body-bg);
+		padding-block: 1.25rem;
+
+		> .container {
+			display: flex;
+			align-items: center;
+			gap: 1.5rem;
+
+			@media (min-width: 992px) {
+				gap: 2rem;
+			}
+
+			@media (min-width: 1200px) {
+				gap: 3rem;
+			}
+
+			@media (min-width: 1400px) {
+				gap: 3.75rem;
+			}
+		}
+
+		.btn-menu {
+
+			@media (min-width: 1200px) {
+				display: none;
+			}
+		}
+	}
+
+	&-phone {
+		--_fs: 1.125rem;
+		--_fw: bold;
+	}
+
+	.btn-menu {
+		--_icon-size: 1.5rem;
+
+		margin-left: auto;
+	}
+
+	.navbar-buttons {
+		margin-left: auto;
+	}
+}

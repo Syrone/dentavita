@@ -1,0 +1,34 @@
+.navbar-nav,
+.navbar-buttons {
+	display: flex;
+
+	.nav-item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.navbar-nav {
+	gap: 1rem;
+
+	@media (min-width: 992px) {
+		gap: 1.25rem;
+	}
+
+	@media (min-width: 1200px) {
+		gap: 1.5rem;
+	}
+
+	@media (min-width: 1400px) {
+		gap: 2rem;
+	}
+
+	.nav-link {
+		--_fs: 1.125rem;
+	}
+}
+
+.navbar-buttons {
+	gap: .625rem;
+}

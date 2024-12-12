@@ -1,0 +1,15 @@
+.brand {
+	display: flex;
+	align-items: center;
+	gap: .25rem;
+
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: var(--secondary);
+
+	.image {
+		width: 2.5rem;
+		height: 2.5rem;
+		display: block;
+	}
+}

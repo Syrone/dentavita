@@ -1,0 +1,351 @@
+// stylelint-disable function-disallowed-list
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and stuff
+
+
+// Container that the modal scrolls within
+.modal {
+  // scss-docs-start modal-css-vars
+  --bs-modal-zindex: 1055;
+  --bs-modal-width: 992px;
+  --bs-modal-padding: 0;
+  --bs-modal-margin: var(--container-offset);
+  --bs-modal-color: var(--text-color);
+  --bs-modal-bg: var(--gray-200);
+  --bs-modal-border-color: transparent;
+  --bs-modal-border-width: 0;
+  --bs-modal-border-radius: var(--rounded);
+  --bs-modal-box-shadow: ;
+  --bs-modal-inner-border-radius: 0;
+  --bs-modal-header-padding-x: 0;
+  --bs-modal-header-padding-y: 0;
+  --bs-modal-header-padding: 0; // Todo in v6: Split this padding into x and y
+  --bs-modal-header-border-color: transparent;
+  --bs-modal-header-border-width: 0;
+  --bs-modal-title-line-height: inherit;
+  --bs-modal-footer-gap: 0;
+  --bs-modal-footer-bg: transparent;
+  --bs-modal-footer-border-color: transparent;
+  --bs-modal-footer-border-width: 0;
+  // scss-docs-end modal-css-vars
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--bs-modal-zindex);
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+  // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
+  // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
+  // See also https://github.com/twbs/bootstrap/issues/17695
+
+  .btn-close {
+    pointer-events: auto;
+    position: absolute;
+    top: 3rem;
+    right: max(var(--container-offset), calc((100% - var(--content-width)) / 2));
+    z-index: 1;
+  }
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: var(--bs-modal-margin);
+  // allow clicks to pass through for custom click handling to close modal
+  pointer-events: none;
+
+  // When fading in the modal, animate it to slide down
+  .modal.fade & {
+    transition-property: transform;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing-function);
+    transform: translate(0, -3rem);
+  }
+  .modal.show & {
+    transform: none;
+  }
+
+  // When trying to close, animate focus to scale
+  .modal.modal-static & {
+    transform: scale(1.02);
+  }
+}
+
+.modal-dialog-scrollable {
+  height: calc(100% - var(--bs-modal-margin) * 2);
+
+  .modal-content {
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .modal-body {
+    overflow-y: auto;
+  }
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - var(--bs-modal-margin) * 2);
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%; // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
+  // counteract the pointer-events: none; in the .modal-dialog
+  color: var(--bs-modal-color);
+  pointer-events: auto;
+  background-color: var(--bs-modal-bg);
+  background-clip: padding-box;
+  border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+  border-radius: var(--bs-modal-border-radius);
+  box-shadow: var(--shadow-sm);
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+  // scss-docs-start modal-backdrop-css-vars
+  --bs-backdrop-zindex: 1050;
+  --bs-backdrop-bg: rgba(var(--gray-800-rgb), .625);
+  --bs-backdrop-opacity: 1;
+  // scss-docs-end modal-backdrop-css-vars
+
+  display: block;
+  background-color: var(--bs-backdrop-bg);
+  opacity: var(--bs-backdrop-opacity);
+  backdrop-filter: blur(1.25rem);
+  cursor: pointer;
+  position: fixed;
+  inset: 0;
+  z-index: var(--bs-backdrop-zindex);
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: var(--bs-modal-header-padding);
+  border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+}
+
+// Title text within header
+.modal-title {
+  margin-bottom: 0;
+  line-height: var(--bs-modal-title-line-height);
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  min-height: 25rem;
+  display: flex;
+  position: relative;
+  // Enable `flex-grow: 1` so that the body take up as much space as possible
+  // when there should be a fixed height on `.modal-dialog`.
+  flex: 1 1 auto;
+  padding: var(--bs-modal-padding);
+
+  @media (min-width: 992px) {
+    min-height: 37.5rem;
+  }
+
+  &-article {
+    width: 100%;
+    display: flex;
+    line-height: 1.5;
+    
+    @media (min-width: 992px) {
+      font-size: 1.5rem;
+    }
+
+    &-start,
+    &-end {
+      
+      @media (min-width: 992px) {
+        flex-basis: 50%;
+      }
+    }
+
+    &-start {
+      padding: 1.5rem 2rem;
+      
+      @media (min-width: 992px) {
+        padding: 2.5rem 3rem;
+      }
+    }
+
+    &-end {
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    &-title {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: normal;
+      text-transform: uppercase;
+      
+      @media (min-width: 992px) {
+        font-size: 2.25rem;
+      }
+    }
+
+    &-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-top-right-radius: var(--bs-modal-border-radius);
+      border-bottom-right-radius: var(--bs-modal-border-radius);
+    }
+  }
+
+  &-form {
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+      
+    @media (min-width: 992px) {
+      padding: 3rem;
+    }
+
+    &-title {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: normal;
+      text-transform: uppercase;
+      text-align: center;
+      margin-block: 2rem;
+
+      @media (min-width: 992px) {
+        font-size: 2.25rem;
+        margin-block: 3rem;
+      }
+    }
+
+    .field {
+      --_color: var(--gray);
+
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .form-check {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
+
+// Footer (for actions)
+.modal-footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center; // vertically center
+  justify-content: flex-end; // Right align buttons with flex property because text-align doesn't work on flex items
+  padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * .5);
+  background-color: var(--bs-modal-footer-bg);
+  border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
+
+  // Place margin between footer elements
+  // This solution is far from ideal because of the universal selector usage,
+  // but is needed to fix https://github.com/twbs/bootstrap/issues/24800
+  > * {
+    margin: calc(var(--bs-modal-footer-gap) * .5); // Todo in v6: replace with gap on parent class
+  }
+}
+
+.modal-picture,
+.modal-video {
+  --bs-modal-bg: transparent;
+  --bs-modal-border-color: transparent;
+  --bs-modal-border-width: 0;
+  --bs-modal-border-radius: 1.25rem;
+  --bs-modal-padding: 0;
+
+  .modal-body {
+    min-height: initial;
+  }
+}
+
+.modal-picture {
+  --bs-modal-width: auto;
+  
+  .modal-content {
+    width: var(--bs-modal-width);
+    margin-inline: auto;
+  }
+
+  [data-iframe-picture] img {
+    max-height: calc(100vh - 3rem);
+    max-height: calc(100svh - 3rem);
+    max-height: calc(100dvh - 3rem);
+    display: block;
+    border-radius: var(--bs-modal-border-radius);
+  }
+}
+
+// Scale up the modal
+@media (min-width: 992px) {
+  .modal {
+    --bs-modal-margin: 0rem;
+    --bs-modal-box-shadow: unset;
+  }
+
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    max-width: var(--bs-modal-width);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.modal-fullscreen {
+  width: 100vw;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+
+  .modal-content {
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .modal-header,
+  .modal-footer {
+    border-radius: 0;
+  }
+
+  .modal-body {
+    overflow-y: auto;
+  }
+}
+// scss-docs-end modal-fullscreen-loop

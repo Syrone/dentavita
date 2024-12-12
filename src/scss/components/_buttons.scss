@@ -1,0 +1,192 @@
+.btn {
+	--_width: initial;
+	--_height: initial;
+	--_fs: var(--fs-base);
+	--_fw: var(--fw-base);
+	--_lh: var(--lh-base);
+	--_ls: normal;
+	--_color: var(--text-color);
+	--_bg: transparent;
+	--_border-width: 0;
+	--_border-style: solid;
+	--_border-color: transparent;
+	--_rounded: 0;
+	--_padding: 0;
+	--_transform: translateZ(0);
+	--_transition-duration: var(--transition-duration);
+	--_transition-timing-function: var(--transition-timing-function);
+
+	--_icon-size: 1rem;
+	--_icon-color: currentColor;
+
+	--_color-hover: var(--primary);
+	--_bg-hover: transparent;
+	--_border-color-hover: transparent;
+	--_transform-hover: translateZ(0);
+
+	--_color-active: var(--primary);
+	--_bg-active: transparent;
+	--_border-color-active: transparent;
+	--_transform-active: initial;
+
+	--_icon-color-hover: currentColor;
+	--_icon-color-active: currentColor;
+
+	width: var(--_width);
+	height: var(--_height);
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem;
+
+	font-size: var(--_fs);
+	font-weight: var(--_fw);
+	line-height: var(--_lh);
+	letter-spacing: var(--_ls);
+	color: var(--_color);
+	cursor: pointer;
+	background-color: var(--_bg);
+	border: var(--_border-width) var(--_border-style) var(--_border-color);
+	border-radius: var(--_rounded);
+	padding: var(--_padding);
+	outline: none;
+	transform: var(--_transform);
+	transition-property: color, text-shadow, background, border, transform, opacity;
+	transition-duration: var(--_transition-duration);
+	transition-timing-function: var(--_transition-timing-function);
+
+	@media (hover: hover) {
+		&:is(:hover, :focus-visible) {
+			color: var(--_color-hover);
+			background-color: var(--_bg-hover);
+			border-color: var(--_border-color-hover);
+			transform: var(--_transform-hover);
+
+			.icon {
+				--_color: var(--_icon-color-hover);
+			}
+		}
+	}
+
+	&:is(:active, .is-active) {
+		color: var(--_color-active);
+		background-color: var(--_bg-active);
+		border-color: var(--_border-color-active);
+		transform: var(--_transform-active);
+
+		.icon {
+			--_color: var(--_icon-color-active);
+		}
+	}
+
+	.icon {
+		--_size: var(--_icon-size);
+		--_color: var(--_icon-color);
+	}
+}
+
+.btn-light {
+	--_bg: var(--gray-100);
+	--_border-width: 1px;
+	--_border-color: var(--gray-400);
+
+	--_icon-color: var(--_color);
+
+	--_color-hover: var(--light);
+	--_color-active: var(--light);
+
+	--_bg-hover: var(--primary);
+	--_bg-active: var(--primary-400);
+
+	--_border-color-hover: var(--primary-700);
+	--_border-color-active: var(--primary-800);
+
+
+	--_icon-color-hover: var(--primary);
+	--_icon-color-active: var(--primary-400);
+
+	.icon {
+		transition-property: color;
+		transition-duration: var(--_transition-duration);
+		transition-timing-function: var(--_transition-timing-function);
+	}
+}
+
+.btn-check {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+	pointer-events: none;
+
+	&:checked {
+		+ .btn {
+			--_color: var(--primary);
+			--_color-hover: var(--primary);
+			--_color-active: var(--primary);
+		}
+	}
+}
+
+.btn-inline {
+	--_fs: inherit;
+	--_fw: inherit;
+	--_lh: inherit;
+	--_ls: inherit;
+	--_color: inherit;
+	
+	display: inline;
+	text-transform: initial;
+}
+
+.btn-inherit {
+	--_fs: inherit;
+	--_fw: inherit;
+	--_lh: inherit;
+	--_ls: inherit;
+	--_color: inherit;
+
+	text-transform: initial;
+}
+
+.btn-base {
+	--_height: 2.5rem;
+	--_fs: 1.25rem;
+	--_rounded: .625rem;
+	--_padding: .25rem .625rem;
+
+	--_icon-size: 2rem;
+
+	&.btn-icon {
+		--_height: auto;
+		--_rounded: 0rem;
+		--_padding: 0rem;
+
+		--_icon-size: 2.5rem;
+	}
+}
+
+.btn-xl {
+	--_height: 3.125rem;
+	--_fs: 1rem;
+	--_rounded: .625rem;
+	--_padding: .5rem 1rem;
+
+	&.btn-icon {
+		--_height: auto;
+		--_rounded: 0rem;
+		--_padding: 0rem;
+
+		--_icon-size: 3.125rem;
+
+		@media (min-width: 992px) {
+			--_icon-size: 4.375rem;
+		}
+	}
+	
+	@media (min-width: 992px) {
+		--_height: 4.375rem;
+		--_fs: 1.5rem;
+		--_rounded: 1rem;
+		--_padding: .5rem 1.25rem;
+	}
+}
