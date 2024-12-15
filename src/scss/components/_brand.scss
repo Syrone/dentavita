@@ -2,10 +2,16 @@
 	display: flex;
 	align-items: center;
 	gap: .25rem;
-
+	flex-shrink: 0;
+	
+	font-family: var(--font-secondary);
 	font-size: 1.5rem;
 	font-weight: 500;
 	color: var(--secondary);
+
+	picture {
+		flex-shrink: 0;
+	}
 
 	.image {
 		width: 2.5rem;

@@ -113,6 +113,30 @@
 	}
 }
 
+.btn-up {
+	--_width: 2.25rem;
+	--_height: 2.25rem;
+	--_color: inherit;
+	--_border-width: 1px;
+	--_border-color: currentColor;
+	--_rounded: .5rem;
+	--_padding: .25rem;
+
+	--_icon-size: 100%;
+
+	--_border-color-hover: var(--_border-color);
+	--_border-color-active: var(--_border-color);
+	
+	flex-shrink: 0;
+
+	@media (min-width: 992px) {
+		--_width: 3.125rem;
+		--_height: 3.125rem;
+		--_rounded: .75rem;
+		--_padding: .5rem;
+	}
+}
+
 .btn-check {
 	position: absolute;
 	clip: rect(0, 0, 0, 0);
