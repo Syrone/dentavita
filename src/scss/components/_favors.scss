@@ -1,0 +1,46 @@
+.favors {
+
+	&-list {
+		counter-reset: item;
+
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	&-item {
+
+		.accordion-button {
+			&::before {
+
+				@media (min-width: 992px) {
+					content: "0" counter(item);
+					counter-increment: item;
+					font-size: 1.25rem;
+					letter-spacing: -.02em;
+					margin-right: 5rem;
+				}
+
+				@media (min-width: 1200px) {
+					margin-right: 10rem;
+				}
+
+				@media (min-width: 1400px) {
+					margin-right: 12.5rem;
+				}
+			}
+		}
+
+		&:nth-child(n + 10) {
+
+			.accordion-button {
+				&::before {
+
+					@media (min-width: 992px) {
+						content: counter(item);
+					}
+				}
+			}
+		}
+	}
+}
