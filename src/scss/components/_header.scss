@@ -43,7 +43,11 @@
 	&-main {
 		width: 100%;
 		background-color: var(--body-bg);
-		padding-block: 1.25rem;
+		padding-block: 1rem;
+
+		@media (min-width: 992px) {
+			padding-block: 1.25rem;
+		}
 
 		> .container {
 			display: flex;

@@ -86,6 +86,16 @@
 	}
 }
 
+.btn-primary {
+	--_color: var(--light);
+	--_bg: var(--primary);
+
+	--_color-hover: var(--light);
+	--_color-active: var(--light);
+	--_bg-hover: var(--primary-400);
+	--_bg-active: var(--primary-400);
+}
+
 .btn-light {
 	--_bg: var(--gray-100);
 	--_border-width: 1px;
@@ -192,6 +202,7 @@
 .btn-xl {
 	--_height: 3.125rem;
 	--_fs: 1rem;
+	--_fw: 700;
 	--_rounded: .625rem;
 	--_padding: .5rem 1rem;
 

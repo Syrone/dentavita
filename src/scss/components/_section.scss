@@ -1,6 +1,14 @@
 .section {
 	margin-bottom: 3.75rem;
 
+	&:first-child {
+		margin-top: 1rem;
+
+		@media (min-width: 992px) {
+			margin-top: 0;
+		}
+	}
+
 	@media (min-width: 992px) {
 		margin-bottom: 7.5rem;
 	}
