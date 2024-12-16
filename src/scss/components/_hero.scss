@@ -175,4 +175,142 @@
 		border-bottom-right-radius: 1.25rem;
 		border-bottom-left-radius: 1.25rem;
 	}
+
+	&-features {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+		margin-top: 1.5rem;
+
+		@media (min-width: 992px) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 2rem;
+			margin-top: 3rem;
+		}
+
+		@media (min-width: 1200px) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			margin-top: 4rem;
+		}
+
+		&-item {
+			border-radius: 1.25rem;
+			position: relative;
+			z-index: 1;
+
+			&::after {
+				content: '';
+				display: block;
+				background-color: var(--secondary);
+				border-radius: inherit;
+				position: absolute;
+				inset: 0;
+				transform: rotate(-3deg);
+				z-index: -1;
+				
+				@media (min-width: 992px) {
+					transform: rotate(-5deg);
+				}
+			}
+
+			&-content {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				color: var(--secondary);
+				background-color: var(--body-bg);
+				border-radius: inherit;
+				padding: .625rem;
+				box-shadow: 0 0 1.25rem .25rem rgba(0, 0, 0, 0.04);
+				position: relative;
+				z-index: 1;
+				overflow: hidden;
+
+				@media (min-width: 992px) {
+					padding: 1rem;
+				}
+
+				&::after {
+					content: '';
+					width: 2.25rem;
+					height: 2.25rem;
+					display: block;
+					background-repeat: no-repeat;
+					background-size: contain;
+					background-position: center;
+					pointer-events: none;
+					user-select: none;
+					position: absolute;
+					right: 0rem;
+					bottom: -.5rem;
+					transform: rotate(-16deg);
+					z-index: -1;
+
+					@media (min-width: 992px) {
+						width: 5rem;
+						height: 5rem;
+						right: -.5rem;
+						bottom: -1rem;
+					}
+				}
+			}
+
+			&-title {
+				font-weight: 400;
+				letter-spacing: normal;
+			}
+
+			&-text {
+				font-size: .75rem;
+				letter-spacing: -.03em;
+				padding-right: 1.25rem;
+
+				@media (min-width: 992px) {
+					font-size: 1rem;
+					padding-right: 2.25rem;
+				}
+			}
+
+			&:nth-child(4n + 1) {
+
+				.hero-features-item-content {
+
+					&::after {
+						background-image: url(../img/hero/features-1.webp);
+					}
+				}
+			}
+
+			&:nth-child(4n + 2) {
+
+				.hero-features-item-content {
+
+					&::after {
+						background-image: url(../img/hero/features-2.webp);
+					}
+				}
+			}
+
+			&:nth-child(4n + 3) {
+
+				.hero-features-item-content {
+
+					&::after {
+						background-image: url(../img/hero/features-3.webp);
+					}
+				}
+			}
+
+			&:nth-child(4n + 4) {
+
+				.hero-features-item-content {
+
+					&::after {
+						background-image: url(../img/hero/features-4.webp);
+					}
+				}
+			}
+		}
+	}
 }

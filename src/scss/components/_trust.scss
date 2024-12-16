@@ -1,0 +1,268 @@
+.trust {
+
+	&-content {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: .625rem;
+
+		@media (min-width: 768px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		@media (min-width: 992px) {
+			gap: 1.25rem;
+		}
+	}
+
+	&-item {
+		min-height: 22.5rem;
+		display: flex;
+		flex-direction: column;
+		font-size: 1.125rem;
+		background-color: var(--gray-200);
+		border-radius: .625rem;
+		padding: .625rem;
+
+		@media (min-width: 992px) {
+			border-radius: 1rem;
+			padding: 2rem;
+		}
+
+		&:empty {
+			display: none;
+		}
+
+		&-title,
+		&-subtitle {
+			color: #000;
+			margin-bottom: 1.25rem;
+		}
+
+		&-title {
+			position: relative;
+			z-index: 1;
+
+			+ .trust-item-subtitle {
+				margin-top: -.75rem;
+				
+				@media (min-width: 992px) {
+					margin-top: -.25rem;
+				}
+			}
+		}
+
+		&-text {
+			letter-spacing: -.03em;
+		}
+
+		&--full {
+			grid-column: -1 / 1;
+		}
+
+		&--picture {
+			min-height: 20rem;
+			display: block;
+			padding: 0;
+		}
+	}
+
+	&-visit,
+	&-cure {
+		gap: .625rem;
+		margin-top: auto;
+		padding-top: 2.25rem;
+
+		@media (min-width: 992px) {
+			gap: .75rem;
+			padding-top: 3rem;
+		}
+
+		&-item {
+			display: flex;
+			gap: 1rem;
+			background-color: var(--light);
+			border-radius: .25rem;
+		}
+	}
+
+	&-visit {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		counter-reset: item;
+
+		@media (min-width: 1200px) {
+			grid-template-columns: repeat(3, auto);
+		}
+
+		&-item {
+			min-height: 5rem;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: space-between;
+			padding: .625rem;
+
+			@media (min-width: 992px) {
+				min-height: 6.25rem;
+			}
+
+			&::before {
+				content: counter(item);
+				counter-increment: item;
+				min-width: 1rem;
+				min-height: 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: .875rem;
+				letter-spacing: -.03em;
+				color: var(--light);
+				background-color: var(--primary);
+				border-radius: 50%;
+			}
+
+			&:first-child {
+				grid-column: -1 / 1;
+
+				@media (min-width: 1200px) {
+					grid-column: unset;
+				}
+			}
+		}
+	}
+
+	&-cure {
+		display: flex;
+		flex-direction: column;
+
+		&-item {
+			align-items: center;
+			padding: .75rem 1rem;
+
+			.image {
+				width: 1.5rem;
+				height: 1.5rem;
+				display: block;
+				flex-shrink: 0;
+				object-fit: contain;
+				object-position: center;
+			}
+		}
+	}
+
+	&-swiper {
+		margin-top: auto;
+
+		.swiper {
+			margin-inline: -1.25rem;
+			padding-inline: 1.25rem;
+
+			@media (min-width: 992px) {
+				margin-inline: -2rem;
+				padding-inline: 2rem;
+			}
+
+			&-slide {
+				width: auto;
+				height: auto;
+			}
+		}
+
+		&-item,
+		&-image {
+			background-color: var(--light);
+			border-radius: .25rem;
+		}
+
+		&-item {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			font-size: 1.25rem;
+			padding: .625rem;
+
+			&::after,
+			&::before {
+				content: '';
+				width: 1.125rem;
+				height: 1.125rem;
+				display: block;
+				color: var(--primary);
+				pointer-events: none;
+				user-select: none;
+				border: 1px solid currentColor;
+				border-radius: 50%;
+				position: absolute;
+				bottom: .625rem;
+				left: .625rem;
+			}
+
+			&::after {
+				content: '';
+				display: block;
+				width: .625rem;
+				height: .625rem;
+				margin: .25rem;
+				background-color: currentColor;
+			}
+		}
+
+		&-image {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+	}
+
+	&-recovery {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 1.25rem;
+		margin-top: auto;
+
+		@media (min-width: 992px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		&-list {
+			display: flex;
+			flex-direction: column;
+			gap: .625rem;
+			font-size: 1.25rem;
+		}
+
+		&-item {
+			display: flex;
+			align-items: center;
+			gap: .625rem;
+			background-color: var(--light);
+			border-radius: .25rem;
+			padding: .75rem 1rem;
+
+			&::before {
+				content: '';
+				width: .5rem;
+				height: .5rem;
+				display: block;
+				flex-shrink: 0;
+				background-color: var(--primary);
+				border-radius: 50%
+			}
+		
+			&:first-child {
+				color: var(--light);
+				background-color: var(--secondary);
+			}
+		}
+
+		&-image {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+			object-position: center;
+			border-radius: .625rem;
+		}
+	}
+}
