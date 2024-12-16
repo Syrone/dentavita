@@ -64,6 +64,36 @@
 			display: block;
 			padding: 0;
 		}
+
+		&--recovery {
+			
+			@media (min-width: 992px) {
+				overflow: hidden;
+				position: relative;
+				z-index: 1;
+			}
+
+			&::after {
+
+				@media (min-width: 992px) {
+					content: '';
+					width: 15rem;
+					height: 15rem;
+					display: block;
+					background-image: url(../img/trust/decor-blob.webp);
+					background-repeat: no-repeat;
+					background-size: contain;
+					background-position: center;
+					pointer-events: none;
+					user-select: none;
+					position: absolute;
+					top: -3rem;
+					right: -7.5rem;
+					transform: rotate(50deg);
+					z-index: -1;
+				}
+			}
+		}
 	}
 
 	&-visit,

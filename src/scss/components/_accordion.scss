@@ -8,8 +8,8 @@
   --bs-accordion-bg: var(--body-bg);
   --bs-accordion-border-color: var(--gray-300);
   --bs-accordion-border-width: 1px;
-  --bs-accordion-border-radius: 1rem;
-  --bs-accordion-inner-border-radius: 1rem;
+  --bs-accordion-border-radius: .625rem;
+  --bs-accordion-inner-border-radius: .625rem;
   --bs-accordion-btn-padding-x: 1rem;
   --bs-accordion-btn-padding-y: 1rem;
   --bs-accordion-btn-fs: 1rem;
@@ -20,15 +20,18 @@
   --bs-accordion-btn-icon-transition: transform var(--transition-duration) var(--transition-timing-function);
   --bs-accordion-btn-focus-box-shadow: unset;
   --bs-accordion-body-padding-x: 0rem;
-  --bs-accordion-body-padding-y: .625rem;
+  --bs-accordion-body-padding-y: .25rem;
   --bs-accordion-active-color: var(--light);
   --bs-accordion-active-bg: var(--secondary);
   // scss-docs-end accordion-css-vars
 
   
   @media (min-width: 992px) {
+    --bs-accordion-border-radius: 1rem;
+    --bs-accordion-inner-border-radius: 1rem;
     --bs-accordion-btn-padding-x: 1.25rem;
     --bs-accordion-btn-fs: 2.25rem;
+    --bs-accordion-body-padding-y: .625rem;
 
     font-size: 1.25rem;
   }
@@ -115,13 +118,40 @@
   overflow: hidden;
 
   &-content {
+    display: flex;
+    align-items: center;
     background-color: var(--gray-100);
     border: 1px solid #CFD5E3;
     border-radius: var(--bs-accordion-border-radius);
     padding: 1rem .625rem;
-    
+
     @media (min-width: 992px) {
+      gap: 3rem;
       padding: 1.5rem 1.25rem 1.5rem 1.5rem;
+    }
+
+    @media (min-width: 1200px) {
+      gap: 5rem;
+    }
+
+    @media (min-width: 1400px) {
+      gap: 7.5rem;
+    }
+
+    picture {
+      flex-shrink: 0;
+    }
+
+    .image {
+      width: 6.25rem;
+      height: 6.25rem;
+      display: none;
+      background-color: var(--body-bg);
+      border-radius: 1rem;
+
+      @media (min-width: 992px) {
+        display: block;
+      }
     }
   }
 }
