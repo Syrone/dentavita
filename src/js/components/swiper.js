@@ -70,3 +70,29 @@ document.querySelectorAll('.tech-swiper')?.forEach((element) => {
 		}
 	})
 })
+
+document.querySelectorAll('.photos-swiper')?.forEach((element) => {
+	new Swiper(element.querySelector('.swiper'), {
+		slidesPerView: 'auto',
+		spaceBetween: 20,
+		pagination: {
+			el: element.querySelector('.swiper-pagination'),
+			clickable: true,
+		},
+		navigation: {
+			nextEl: element.querySelector('.swiper-button-next'),
+			prevEl: element.querySelector('.swiper-button-prev'),
+		},
+
+		breakpoints: {
+			0: {
+				slidesPerView: 1.125,
+				spaceBetween: 10,
+			},
+			992: {
+				slidesPerView: 'auto',
+				spaceBetween: 20,
+			},
+		}
+	})
+})

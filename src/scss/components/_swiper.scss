@@ -2,6 +2,51 @@
 	position: relative;
 }
 
+.swiper-navigation {
+	display: flex;
+	justify-content: center;
+	gap: .625rem;
+	margin-top: 1.25rem;
+
+	@media (min-width: 1440px) {
+		margin-top: unset;
+	}
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	--swiper-navigation-size: 3.125rem;
+	--swiper-navigation-color: var(--text-color);
+
+	--_width: var(--swiper-navigation-size);
+	--_height: var(--swiper-navigation-size);
+	--_color: var(--swiper-navigation-color);
+	--_bg: var(--light);
+	--_rounded: 50%;
+	--_padding: .625rem;
+
+	--_icon-size: 100%;
+
+	--_bg-hover: var(--light);
+	--_bg-active: var(--light);
+
+	box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.04);
+
+	position: static;
+	margin-top: unset;
+
+	@media (min-width: 1440px) {
+		--swiper-navigation-sides-offset: calc(var(--swiper-navigation-size) / 2 * -1);
+
+		position: absolute;
+		margin-top: calc(0px - var(--swiper-navigation-size) / 2);
+	}
+
+	&::after {
+		all: unset;
+	}
+}
+
 .swiper-pagination {
 	--swiper-pagination-bullet-size: .625rem;
 	--swiper-pagination-color: #ABABAB;
