@@ -1,3 +1,19 @@
-.swiper {
-	
+.swiper-container {
+	position: relative;
+}
+
+.swiper-pagination {
+	--swiper-pagination-bullet-size: .625rem;
+	--swiper-pagination-color: #ABABAB;
+	--swiper-pagination-bullet-inactive-opacity: 1;
+	--swiper-pagination-bullet-inactive-color: #E6E6E6;
+
+	position: static;
+	margin-top: 1rem;
+
+	&:not(.swiper-pagination-lock) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }

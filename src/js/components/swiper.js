@@ -9,6 +9,7 @@ document.querySelectorAll('.trust-swiper')?.forEach(element => {
 		spaceBetween: 16,
 		pagination: {
 			el: element.querySelector('.swiper-pagination'),
+			clickable: true,
 		},
 
 		breakpoints: {
@@ -31,6 +32,40 @@ document.querySelectorAll('.trust-swiper')?.forEach(element => {
 			1200: {
 				slidesPerView: 5,
 				spaceBetween: 16,
+			}
+		}
+	})
+})
+
+document.querySelectorAll('.tech-swiper')?.forEach((element) => {
+	new Swiper(element.querySelector('.swiper'), {
+		slidesPerView: 'auto',
+		spaceBetween: 20,
+		pagination: {
+			el: element.querySelector('.swiper-pagination'),
+			clickable: true,
+		},
+
+		breakpoints: {
+			0: {
+				slidesPerView: 1.25,
+				spaceBetween: 10,
+			},
+			576: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+			},
+			768: {
+				slidesPerView: 3,
+				spaceBetween: 10,
+			},
+			992: {
+				slidesPerView: 'auto',
+				spaceBetween: 20,
+			},
+			1200: {
+				slidesPerView: 'auto',
+				spaceBetween: 20,
 			}
 		}
 	})
