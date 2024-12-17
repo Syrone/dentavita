@@ -1,0 +1,29 @@
+.staff {
+	background-color: #f3f3f3;
+	padding-block: 2.5rem;
+
+	&-swiper {
+
+		.swiper {
+			margin: -1.25rem calc(var(--container-offset) * -1);
+			padding: 1.25rem var(--container-offset);
+
+			@media (min-width: 1440px) {
+				margin: -1.25rem -.75rem;
+				padding: 1.25rem .75rem;
+			}
+
+			&-slide {
+				width: auto;
+				height: auto;
+			}
+		}
+
+		.swiper-button-next, .swiper-button-prev {
+
+			@media (min-width: 1440px) {
+				margin-top: -3.5rem;
+			}
+		}
+	}
+}

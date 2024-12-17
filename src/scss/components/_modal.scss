@@ -10,11 +10,11 @@
 .modal {
   // scss-docs-start modal-css-vars
   --bs-modal-zindex: 1055;
-  --bs-modal-width: 992px;
-  --bs-modal-padding: 0;
+  --bs-modal-width: 66.25rem;
+  --bs-modal-padding: 2.75rem .625rem 2rem;
   --bs-modal-margin: var(--container-offset);
-  --bs-modal-color: var(--text-color);
-  --bs-modal-bg: var(--gray-200);
+  --bs-modal-color: #000;
+  --bs-modal-bg: var(--body-bg);
   --bs-modal-border-color: transparent;
   --bs-modal-border-width: 0;
   --bs-modal-border-radius: var(--rounded);
@@ -47,13 +47,26 @@
   // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
   // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
   // See also https://github.com/twbs/bootstrap/issues/17695
+  
+  @media (min-width: 992px) {
+    --bs-modal-padding: 2rem;
+  }
 
   .btn-close {
+    --_icon-size: 1.5rem;
+
     pointer-events: auto;
     position: absolute;
-    top: 3rem;
-    right: max(var(--container-offset), calc((100% - var(--content-width)) / 2));
+    top: .625rem;
+    right: .625rem;
     z-index: 1;
+
+    @media (min-width: 992px) {
+      --_icon-size: 2rem;
+
+      top: 2rem;
+      right: 2rem;
+    }
   }
 }
 
@@ -123,14 +136,13 @@
 .modal-backdrop {
   // scss-docs-start modal-backdrop-css-vars
   --bs-backdrop-zindex: 1050;
-  --bs-backdrop-bg: rgba(var(--gray-800-rgb), .625);
+  --bs-backdrop-bg: rgba(0, 0, 0, .4);
   --bs-backdrop-opacity: 1;
   // scss-docs-end modal-backdrop-css-vars
 
   display: block;
   background-color: var(--bs-backdrop-bg);
   opacity: var(--bs-backdrop-opacity);
-  backdrop-filter: blur(1.25rem);
   cursor: pointer;
   position: fixed;
   inset: 0;
@@ -158,6 +170,7 @@
 .modal-body {
   min-height: 25rem;
   display: flex;
+  gap: 1.25rem;
   position: relative;
   // Enable `flex-grow: 1` so that the body take up as much space as possible
   // when there should be a fixed height on `.modal-dialog`.
@@ -168,97 +181,18 @@
     min-height: 37.5rem;
   }
 
-  &-article {
-    width: 100%;
-    display: flex;
-    line-height: 1.5;
-    
-    @media (min-width: 992px) {
-      font-size: 1.5rem;
-    }
+  picture {
+    flex-shrink: 0;
 
-    &-start,
-    &-end {
-      
-      @media (min-width: 992px) {
-        flex-basis: 50%;
-      }
-    }
-
-    &-start {
-      padding: 1.5rem 2rem;
-      
-      @media (min-width: 992px) {
-        padding: 2.5rem 3rem;
-      }
-    }
-
-    &-end {
-      @media (max-width: 992px) {
-        display: none;
-      }
-    }
-
-    &-title {
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: normal;
-      text-transform: uppercase;
-      
-      @media (min-width: 992px) {
-        font-size: 2.25rem;
-      }
-    }
-
-    &-image {
+    .image {
+      width: 7.5rem;
       display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-top-right-radius: var(--bs-modal-border-radius);
-      border-bottom-right-radius: var(--bs-modal-border-radius);
-    }
-  }
-
-  &-form {
-    width: 100%;
-    max-width: 600px;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem 2rem;
-      
-    @media (min-width: 992px) {
-      padding: 3rem;
-    }
-
-    &-title {
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: normal;
-      text-transform: uppercase;
-      text-align: center;
-      margin-block: 2rem;
+      border-radius: 1rem;
+      object-fit: contain;
 
       @media (min-width: 992px) {
-        font-size: 2.25rem;
-        margin-block: 3rem;
+        width: 16.875rem;
       }
-    }
-
-    .field {
-      --_color: var(--gray);
-
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .form-check {
-      margin-top: auto;
-      padding-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      text-align: center;
     }
   }
 }
@@ -282,40 +216,171 @@
   }
 }
 
-.modal-picture,
-.modal-video {
-  --bs-modal-bg: transparent;
-  --bs-modal-border-color: transparent;
-  --bs-modal-border-width: 0;
-  --bs-modal-border-radius: 1.25rem;
-  --bs-modal-padding: 0;
+.modal-info {
 
-  .modal-body {
-    min-height: initial;
+  &-header {
+    display: flex;
+    gap: .375rem;
+    margin-bottom: .625rem;
+
+    @media (min-width: 992px) {
+      padding-right: 2rem;
+      margin-bottom: 0;
+    }
   }
-}
 
-.modal-picture {
-  --bs-modal-width: auto;
+  &-title,
+  &-job {
+    letter-spacing: -.03em;
+    color: inherit;
+  }
+
+  &-title {
+    font-size: 1.125rem;
+    margin-bottom: .625rem;
+
+    @media (min-width: 992px) {
+      font-size: 2rem;
+    }
+  }
+
+  &-job {
+    font-size: .875rem;
+    opacity: .4;
+    margin-bottom: 1.25rem;
+
+    @media (min-width: 992px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &-descr {
+    margin-bottom: 1.25rem;
+
+    @media (min-width: 992px) {
+      font-size: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  .accordion {
+    --bs-accordion-btn-padding-y: .625rem;
+    --bs-accordion-btn-padding-x: .625rem;
+    --bs-accordion-btn-fs: 1.25rem;
+    --bs-accordion-btn-color: inherit;
+    --bs-accordion-active-color: inherit;
+    --bs-accordion-active-bg: var(--gray-100);
+    --bs-accordion-body-padding-y: 0;
+
+    font-size: 1rem;
+
+    @media (min-width: 992px) {
+      --bs-accordion-btn-padding-y: 1rem;
+      --bs-accordion-btn-padding-x: 2rem;
+    }
+
+    &-button {
+      font-weight: 500;
+      border: 1px solid #CFD5E3;
+
+      &:not(.collapsed) {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 0;
+      }
+
+      &-icon {
+        --_size: 1.5rem;
+
+        @media (min-width: 992px) {
+          display: none;
+        }
+      }
+    }
+
+    &-body-content {
+      border-top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      padding: 0 .625rem 1rem;
+
+      @media (min-width: 992px) {
+        padding: 0 2rem 1.25rem;
+      }
+    }
+  }
+
+  &-list {
+    width: 100%;
+    font-size: .875rem;
+
+    @media (min-width: 992px) {
+      font-size: inherit;
+    }
+  }
+
+  &-item {
+    border-top: 1px solid #D3D6E6;
+    padding-block: .5rem;
+
+    @media (min-width: 992px)  {
+      padding-block: .625rem;
+    }
   
-  .modal-content {
-    width: var(--bs-modal-width);
-    margin-inline: auto;
+    &:last-child {
+      border-bottom: 1px solid #D3D6E6;
+    }
   }
 
-  [data-iframe-picture] img {
-    max-height: calc(100vh - 3rem);
-    max-height: calc(100svh - 3rem);
-    max-height: calc(100dvh - 3rem);
-    display: block;
-    border-radius: var(--bs-modal-border-radius);
+  &-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+
+    @media (min-width: 992px) {
+      gap: 3.125rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &-detail {
+
+    &-title {
+      font-family: var(--font-family);
+      font-size: 1rem;
+      letter-spacing: -.03em;
+      margin-bottom: .625rem;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .625rem;
+    }
+
+    &-item {
+      width: 5rem;
+      height: 5rem;
+      background-color: var(--gray-100);
+      border-radius: .5rem;
+      padding: .625rem;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      mix-blend-mode: luminosity;
+    }
   }
 }
 
 // Scale up the modal
 @media (min-width: 992px) {
   .modal {
-    --bs-modal-margin: 0rem;
+    --bs-modal-margin: 2rem;
     --bs-modal-box-shadow: unset;
   }
 

@@ -1,0 +1,141 @@
+.card {
+	max-width: 13.125rem;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+
+	@media (min-width: 992px) {
+		max-width: 16.5rem;
+	}
+
+	@media (min-width: 1200px) {
+		max-width: 100%;
+	}
+
+	&-placeholder {
+		display: flex;
+		align-items: center;
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--light);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+		opacity: 0;
+		transition-property: opacity;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-timing-function);
+
+		@media (min-width: 992px) {
+			font-weight: 400;
+			gap: .25rem;
+		}
+
+		.icon {
+			--_size: 1.5rem;
+		}
+	}
+
+	&-pictures {
+		display: block;
+		position: relative;
+		z-index: 1;
+
+		&::after,
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			transition-property: opacity, transform;
+			transition-duration: var(--transition-duration);
+			transition-timing-function: var(--transition-timing-function);
+		}
+
+		&::before {
+			background-color: var(--secondary);
+			border-radius: .625rem;
+			inset: -.75rem 0 0 0;
+			opacity: 0;
+			transform: rotate(0deg);
+			z-index: -1;
+		}
+
+		&::after {
+			background-color: var(--text-color);
+			opacity: 0;
+			border-radius: .625rem;
+			inset: 0;
+		}
+	}
+
+	&-image {
+		width: 100%;
+		height: 100%;
+		min-height: 18.75rem;
+		display: block;
+		border-radius: .625rem;
+
+		@media (min-width: 992px) {
+			min-height: 23.4375rem;
+		}
+	}
+
+	&-title {
+		font-family: var(--font-family);
+		font-size: 1.125rem;
+		font-weight: 400;
+		letter-spacing: -.02em;
+		margin-top: .625rem;
+		position: relative;
+
+		@media (min-width: 992px) {
+			font-size: 1.5rem;
+		}
+	}
+
+	&-text {
+		font-size: .875rem;
+		margin-top: .25rem;
+		opacity: 0.8;
+	}
+
+	.stretched-link {
+
+		@media (hover: hover) {
+
+			&:is(:hover, :focus-visible) {
+
+				~ .card-pictures .card-placeholder,
+				~ .card-pictures::before {
+					opacity: 1;
+				}
+
+				~ .card-pictures::after {
+					opacity: .4;
+				}
+
+				~ .card-pictures::before {
+					transform: rotate(-2deg);
+				}
+			}
+		}
+
+		&:is(:active, .is-active) {
+
+			~ .card-pictures .card-placeholder,
+			~ .card-pictures::before {
+				opacity: 1;
+			}
+
+			~ .card-pictures::after {
+				opacity: .4;
+			}
+
+			~ .card-pictures::before {
+				transform: rotate(-2deg);
+			}
+		}
+	}
+}

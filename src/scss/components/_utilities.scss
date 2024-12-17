@@ -105,8 +105,12 @@ a {
 }
 
 .stretched-link {
+  margin: 0;
+  border: 0;
+  padding: 0;
 	position: absolute;
 	inset: 0;
+  outline: none;
 
 	&::after {
 		content: '';
@@ -114,7 +118,7 @@ a {
 		cursor: pointer;
 		position: absolute;
 		inset: 0;
-		z-index: 1;
+		z-index: 10;
 	}
 }
 

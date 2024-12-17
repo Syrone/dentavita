@@ -96,3 +96,37 @@ document.querySelectorAll('.photos-swiper')?.forEach((element) => {
 		}
 	})
 })
+
+document.querySelectorAll('.staff-swiper')?.forEach((element) => {
+	new Swiper(element.querySelector('.swiper'), {
+		slidesPerView: 5,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: element.querySelector('.swiper-button-next'),
+			prevEl: element.querySelector('.swiper-button-prev'),
+		},
+
+		breakpoints: {
+			0: {
+				slidesPerView: 'auto',
+				spaceBetween: 10,
+			},
+			576: {
+				slidesPerView: 'auto',
+				spaceBetween: 10,
+			},
+			768: {
+				slidesPerView: 'auto',
+				spaceBetween: 10,
+			},
+			992: {
+				slidesPerView: 'auto',
+				spaceBetween: 20,
+			},
+			1200: {
+				slidesPerView: 5,
+				spaceBetween: 20,
+			}
+		}
+	})
+})
