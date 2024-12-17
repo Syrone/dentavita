@@ -1,0 +1,193 @@
+.callback {
+
+	&-content {
+		display: grid;
+		align-items: start;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		gap: 1.5rem;
+		position: relative;
+
+		@media (min-width: 768px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		@media (min-width: 992px) {
+			gap: 3rem;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			width: 5rem;
+			height: 5rem;
+			display: block;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			position: absolute;
+			opacity: .5;
+			z-index: -1;
+
+			@media (min-width: 992px) {
+				width: 15rem;
+				height: 15rem;
+			}
+		}
+
+		&::before {
+			background-image: url(../img/callback/teeth-2.webp);
+			top: 10rem;
+			left: -2.5rem;
+			
+			@media (min-width: 992px) {
+				top: auto;
+				bottom: calc(100% - 2.25rem);
+				left: 6.25rem;
+			}
+		}
+
+		&::after {
+			background-image: url(../img/callback/teeth-1.webp);
+			left: auto;
+			right: -2rem;
+			bottom: -2.25rem;
+			
+			@media (min-width: 992px) {
+				top: calc(100% - .5rem);
+				left: calc(50% - 20rem);
+				bottom: auto;
+			}
+		}
+	}
+
+	&-contacts {
+		background-color: var(--body-bg);
+		border-radius: 1.25rem;
+		padding: 1rem;
+		background-image: url(../img/callback/teeths.webp);
+		background-repeat: no-repeat;
+		background-size: 9.75rem 9.0625rem;
+		background-position: calc(100% + 4rem) 1.5rem;
+		box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.04);
+		position: relative;
+
+		@media (min-width: 992px) {
+			padding: 2rem;
+			background-size: 19.25rem 17.875rem;
+			background-position: calc(100% + 4rem) 50%;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			background-color: var(--secondary);
+			border-radius: inherit;
+			pointer-events: none;
+			user-select: none;
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			transform: rotate(-2deg);
+			
+			@media (min-width: 992px) {
+				transform: rotate(-4deg);
+			}
+		}
+
+		&-title {
+			font-family: var(--font-family);
+			display: flex;
+			align-items: center;
+			gap: .625rem;
+			font-size: 2.25rem;
+			letter-spacing: -.05em;
+			margin-bottom: 1rem;
+			
+			@media (min-width: 992px) {
+				margin-bottom: 1.25rem;
+			}
+
+			.icon {
+				--_size: 2rem;
+			}
+		}
+
+		&-list {
+			display: grid;
+			gap: 1.25rem;
+		}
+
+		&-item {
+
+			&-title {
+				font-family: var(--font-family);
+				font-size: 1.25rem;
+				font-weight: 700;
+				letter-spacing: -.05em;
+				margin-bottom: .625rem;
+
+				@media (min-width: 992px) {
+					font-size: 1.5rem;
+				}
+			}
+
+			&-address {
+				font-size: 1.125rem;
+				font-style: normal;
+				margin-bottom: .5rem;
+				
+				@media (min-width: 992px) {
+					font-size: 1.25rem;
+					margin-bottom: .375rem;
+				}
+			}
+
+			&-phones,
+			&-phone {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			&-phones {
+				gap: .25em;
+				font-size: 1rem;
+				opacity: .5;
+			}
+
+			&-phone {
+				gap: 1.25rem;
+			}
+		}
+	}
+
+	&-title {
+		margin-bottom: 3rem;
+		
+		@media (min-width: 992px) {
+			margin-bottom: 1.25rem;
+		}
+	}
+
+	&-form {
+		position: relative;
+
+		&-image {
+			width: 12.5rem;
+			object-fit: contain;
+			pointer-events: none;
+			user-select: none;
+			position: absolute;
+			top: calc(100% + 2rem);
+			left: 50%;
+			transform: translateX(-50%);
+
+			@media (min-width: 768px) {
+				width: 27.8125rem;
+				top: calc(100% - 3rem);
+			}
+			
+			@media (min-width: 1400px) {
+			}
+		}
+	}
+}

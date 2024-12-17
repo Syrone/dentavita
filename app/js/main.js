@@ -5512,6 +5512,57 @@ document.querySelectorAll('.staff-swiper')?.forEach(element => {
     }
   });
 });
+document.querySelectorAll('.reviews-swiper')?.forEach(element => {
+  new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](element.querySelector('.swiper'), {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: element.querySelector('.swiper-button-next'),
+      prevEl: element.querySelector('.swiper-button-prev')
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.125,
+        spaceBetween: 10
+      },
+      576: {
+        slidesPerView: 1.5,
+        spaceBetween: 10
+      },
+      768: {
+        slidesPerView: 1.75,
+        spaceBetween: 10
+      },
+      992: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      }
+    },
+    on: {
+      init: function () {
+        updateSlideInfo(this);
+      },
+      slideChange: function () {
+        updateSlideInfo(this);
+      }
+    }
+  });
+});
+
+/**
+ * Обновление информации для каждого слайда
+ * @param {Swiper} swiper - Экземпляр Swiper
+ */
+function updateSlideInfo(swiper) {
+  swiper.slides.forEach((slide, index) => {
+    const infoElement = slide.querySelector('.reviews-swiper-item-quantity');
+    if (infoElement) {
+      const totalSlides = swiper.slides.length;
+      const currentSlide = index + 1;
+      infoElement.textContent = `${currentSlide}/${totalSlides}`;
+    }
+  });
+}
 
 /***/ }),
 

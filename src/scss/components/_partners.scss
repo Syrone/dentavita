@@ -1,0 +1,22 @@
+.partners {
+
+	.ticker {
+		--ticker-gap: .375rem;
+
+		&-list {
+
+			li {
+
+				&::before {
+					all: unset;
+				}
+
+				.image {
+					display: block;
+					object-fit: contain;
+				}
+			}
+		}
+		
+	}
+}
