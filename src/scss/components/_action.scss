@@ -39,6 +39,7 @@
 			right: -.25rem;
 			top: -4.5rem;
 			z-index: -1;
+			animation: floatAnimation 3s ease-in-out infinite;
 
 			@media (min-width: 992px) {
 				width: 20rem;
@@ -163,7 +164,11 @@
 
 			&:nth-child(2),
 			&:nth-child(3) {
-				margin-left: -1.25rem;
+				margin-left: -.75rem;
+				
+				@media (min-width: 992px) {
+					margin-left: -1.25rem;
+				}
 			}
 		}
 
@@ -202,4 +207,14 @@
 			}
 		}
 	}
+}
+
+@keyframes floatAnimation {
+  0%,
+	100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(.25rem, -.5rem);
+  }
 }

@@ -2127,6 +2127,8 @@ textarea {
   right: -0.25rem;
   top: -4.5rem;
   z-index: -1;
+  -webkit-animation: floatAnimation 3s ease-in-out infinite;
+  animation: floatAnimation 3s ease-in-out infinite;
 }
 @media (min-width: 992px) {
   .action-content::after {
@@ -2263,7 +2265,12 @@ textarea {
   flex-shrink: 0;
 }
 .action-content-picture:nth-child(2), .action-content-picture:nth-child(3) {
-  margin-left: -1.25rem;
+  margin-left: -0.75rem;
+}
+@media (min-width: 992px) {
+  .action-content-picture:nth-child(2), .action-content-picture:nth-child(3) {
+    margin-left: -1.25rem;
+  }
 }
 .action-content-image, .action-content-quantity {
   width: 4rem;
@@ -2307,6 +2314,27 @@ textarea {
   }
 }
 
+@-webkit-keyframes floatAnimation {
+  0%, 100% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(0.25rem, -0.5rem);
+    transform: translate(0.25rem, -0.5rem);
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(0.25rem, -0.5rem);
+    transform: translate(0.25rem, -0.5rem);
+  }
+}
 .footer {
   color: var(--light);
   background-color: var(--secondary);
