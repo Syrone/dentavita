@@ -5280,16 +5280,23 @@ document.querySelectorAll('[data-bs-toggle="collapse"]')?.forEach(button => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
+/* harmony import */ var _functions_header_height_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/header-height.js */ "./src/js/functions/header-height.js");
+/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
 
-const headerTopHeight = () => {
-  const headerTop = document.querySelector('.header-top');
-  if (headerTop) {
-    document.documentElement.style.setProperty('--header-top-height', `${headerTop.offsetHeight}px`);
-  }
-};
-headerTopHeight();
-window.addEventListener('resize', (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__.throttle)(headerTopHeight));
+
+const header = document.querySelector('.header');
+if (header) {
+  const headerTopHeight = () => {
+    const headerTop = document.querySelector('.header-top');
+    if (headerTop) {
+      document.documentElement.style.setProperty('--header-top-height', `${headerTop.offsetHeight}px`);
+    }
+  };
+  headerTopHeight();
+  (0,_functions_header_height_js__WEBPACK_IMPORTED_MODULE_0__.getHeaderHeight)();
+  window.addEventListener('resize', (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_1__.throttle)(headerTopHeight));
+  window.addEventListener('resize', (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_1__.throttle)(_functions_header_height_js__WEBPACK_IMPORTED_MODULE_0__.getHeaderHeight));
+}
 
 /***/ }),
 
@@ -5577,6 +5584,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_transfer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/transfer.js */ "./src/js/functions/transfer.js");
 
 new _functions_transfer_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
+
+/***/ }),
+
+/***/ "./src/js/functions/header-height.js":
+/*!*******************************************!*\
+  !*** ./src/js/functions/header-height.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getHeaderHeight: () => (/* binding */ getHeaderHeight)
+/* harmony export */ });
+const getHeaderHeight = () => {
+  const headerHeight = document?.querySelector('.header').offsetHeight;
+  document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
+};
 
 /***/ }),
 

@@ -25,7 +25,9 @@
               <p class="hero-content-text">
                 Подберем индивидуальную программу лечения любой сложности каждому пациенту 
               </p>
-              <button type="button" class="btn btn-xl btn-primary hero-content-btn">
+              <button type="button" class="btn btn-xl btn-primary hero-content-btn"
+                data-transfer-origin="button-fixed"
+                data-transfer-breakpoint="992">
                 Записаться на консультацию
               </button>
 
@@ -1666,6 +1668,8 @@
           </div>
         </section>
       </div>
+
+      <div data-transfer-target="button-fixed"></div>
 
       @include('partials/offcanvases.html')
       @include('partials/modals.html')

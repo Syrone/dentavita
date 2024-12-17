@@ -1406,7 +1406,10 @@ textarea {
   }
 }
 .hero-content {
-  min-height: 41.25rem;
+  min-height: 40rem;
+  height: calc(100vh - var(--header-height) - 3rem);
+  height: calc(100svh - var(--header-height) - 3rem);
+  height: calc(100dvh - var(--header-height) - 3rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1424,15 +1427,20 @@ textarea {
   overflow: hidden;
   z-index: 1;
 }
-@media (min-width: 992px) {
+@media (min-width: 576px) {
   .hero-content {
-    min-height: 36.25rem;
-    padding: 3.75rem 2.5rem;
+    height: auto;
+    min-height: calc(100vh - var(--header-height) - 3rem);
+    min-height: calc(100svh - var(--header-height) - 3rem);
+    min-height: calc(100dvh - var(--header-height) - 3rem);
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .hero-content {
-    min-height: 41.25rem;
+    min-height: calc(100vh - var(--header-height) - 2.75rem);
+    min-height: calc(100svh - var(--header-height) - 2.75rem);
+    min-height: calc(100dvh - var(--header-height) - 2.75rem);
+    padding: 3.75rem 2.5rem;
   }
 }
 .hero-content-picture, .hero-content-image {
@@ -1509,13 +1517,19 @@ textarea {
   max-width: 28.25rem;
 }
 .hero-content-btn {
-  margin-top: auto;
+  position: fixed;
+  bottom: 1.25rem;
+  left: var(--container-offset);
+  right: var(--container-offset);
+  z-index: 1000;
 }
 @media (min-width: 992px) {
   .hero-content-btn {
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
+    margin-top: auto;
+    position: static;
   }
 }
 .hero-ticker {
@@ -2453,14 +2467,16 @@ textarea {
     position: relative;
   }
 }
-.tech-content-header {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+@media (min-width: 992px) {
+  .tech-content-header {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 }
 .tech-content-title, .tech-content-subtitle {
   text-align: center;
@@ -3727,7 +3743,7 @@ textarea {
 .footer {
   color: var(--light);
   background-color: var(--secondary);
-  padding-block: 1.25rem;
+  padding-block: 1.25rem 6rem;
 }
 @media (min-width: 992px) {
   .footer {
