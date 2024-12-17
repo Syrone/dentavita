@@ -377,6 +377,23 @@
   }
 }
 
+.modal-form {
+  --bs-modal-width: 37.5rem;
+  --bs-modal-padding: 2rem .625rem;
+
+  @media (min-width: 992px) {
+    --bs-modal-padding: 2rem;
+  }
+
+  .modal-body {
+    min-height: initial;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+
 // Scale up the modal
 @media (min-width: 992px) {
   .modal {

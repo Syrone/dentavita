@@ -70,6 +70,7 @@
 
 	&-content {
 		min-height: 40rem;
+		max-height: 41.25rem;
 		height: calc(100vh - var(--header-height) - 3rem);
 		height: calc(100svh - var(--header-height) - 3rem);
 		height: calc(100dvh - var(--header-height) - 3rem);
@@ -86,16 +87,17 @@
 		z-index: 1;
 
 		@media (min-width: 576px) {
+			min-height: 31.25rem;
 			height: auto;
-			min-height: calc(100vh - var(--header-height) - 3rem);
-			min-height: calc(100svh - var(--header-height) - 3rem);
-			min-height: calc(100dvh - var(--header-height) - 3rem);
+			height: calc(100vh - var(--header-height) - 3rem);
+			height: calc(100svh - var(--header-height) - 3rem);
+			height: calc(100dvh - var(--header-height) - 3rem);
 		}
 
 		@media (min-width: 992px) {
-			min-height: calc(100vh - var(--header-height) - 2.75rem);
-			min-height: calc(100svh - var(--header-height) - 2.75rem);
-			min-height: calc(100dvh - var(--header-height) - 2.75rem);
+			height: calc(100vh - var(--header-height) - 2.75rem);
+			height: calc(100svh - var(--header-height) - 2.75rem);
+			height: calc(100dvh - var(--header-height) - 2.75rem);
 			padding: 3.75rem 2.5rem;
 		}
 

@@ -737,6 +737,12 @@ textarea {
   margin-top: 1.5rem;
 }
 
+.form-title {
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .form-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1407,6 +1413,7 @@ textarea {
 }
 .hero-content {
   min-height: 40rem;
+  max-height: 41.25rem;
   height: calc(100vh - var(--header-height) - 3rem);
   height: calc(100svh - var(--header-height) - 3rem);
   height: calc(100dvh - var(--header-height) - 3rem);
@@ -1429,17 +1436,18 @@ textarea {
 }
 @media (min-width: 576px) {
   .hero-content {
+    min-height: 31.25rem;
     height: auto;
-    min-height: calc(100vh - var(--header-height) - 3rem);
-    min-height: calc(100svh - var(--header-height) - 3rem);
-    min-height: calc(100dvh - var(--header-height) - 3rem);
+    height: calc(100vh - var(--header-height) - 3rem);
+    height: calc(100svh - var(--header-height) - 3rem);
+    height: calc(100dvh - var(--header-height) - 3rem);
   }
 }
 @media (min-width: 992px) {
   .hero-content {
-    min-height: calc(100vh - var(--header-height) - 2.75rem);
-    min-height: calc(100svh - var(--header-height) - 2.75rem);
-    min-height: calc(100dvh - var(--header-height) - 2.75rem);
+    height: calc(100vh - var(--header-height) - 2.75rem);
+    height: calc(100svh - var(--header-height) - 2.75rem);
+    height: calc(100dvh - var(--header-height) - 2.75rem);
     padding: 3.75rem 2.5rem;
   }
 }
@@ -4587,6 +4595,22 @@ textarea {
   -o-object-fit: contain;
   object-fit: contain;
   mix-blend-mode: luminosity;
+}
+
+.modal-form {
+  --bs-modal-width: 37.5rem;
+  --bs-modal-padding: 2rem .625rem;
+}
+@media (min-width: 992px) {
+  .modal-form {
+    --bs-modal-padding: 2rem;
+  }
+}
+.modal-form .modal-body {
+  min-height: initial;
+}
+.modal-form form {
+  width: 100%;
 }
 
 @media (min-width: 992px) {

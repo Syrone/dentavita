@@ -104,6 +104,12 @@ textarea {
 	}
 }
 
+.form-title {
+	color: var(--secondary);
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
 .form-footer {
 	display: flex;
 	gap: .625rem;
