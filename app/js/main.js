@@ -5215,12 +5215,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_renderCard_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/renderCard.js */ "./src/js/components/renderCard.js");
 /* harmony import */ var _components_renderModals_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/renderModals.js */ "./src/js/components/renderModals.js");
 /* harmony import */ var _components_transfer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/transfer.js */ "./src/js/components/transfer.js");
-/* harmony import */ var _components_swiper_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/swiper.js */ "./src/js/components/swiper.js");
-/* harmony import */ var _components_offcanvas_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/offcanvas.js */ "./src/js/components/offcanvas.js");
-/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
-/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
-/* harmony import */ var _components_popper_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/popper.js */ "./src/js/components/popper.js");
-/* harmony import */ var _components_imask_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/imask.js */ "./src/js/components/imask.js");
+/* harmony import */ var _components_scrollTarget_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/scrollTarget.js */ "./src/js/components/scrollTarget.js");
+/* harmony import */ var _components_swiper_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/swiper.js */ "./src/js/components/swiper.js");
+/* harmony import */ var _components_offcanvas_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/offcanvas.js */ "./src/js/components/offcanvas.js");
+/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
+/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
+/* harmony import */ var _components_popper_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/popper.js */ "./src/js/components/popper.js");
+/* harmony import */ var _components_imask_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/imask.js */ "./src/js/components/imask.js");
+
 
 
 
@@ -5579,6 +5581,84 @@ function createDoctorModals(doctors) {
   document.body.appendChild(modalContainer);
 }
 createDoctorModals(window.objectDoctors);
+
+/***/ }),
+
+/***/ "./src/js/components/scrollTarget.js":
+/*!*******************************************!*\
+  !*** ./src/js/components/scrollTarget.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// Получаем значение переменной --header-height из :root
+const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'), 10) || 0;
+
+// Получаем все секции и кнопки
+const sections = document.querySelectorAll('section');
+const buttons = document.querySelectorAll('[data-scroll-target]');
+
+// Создаем Map для быстрого соответствия секций и кнопок
+const sectionButtonMap = new Map();
+buttons.forEach(button => {
+  const targetSelector = button.getAttribute('data-scroll-target');
+  const targetElement = document.querySelector(targetSelector);
+  if (targetElement) {
+    sectionButtonMap.set(targetElement, button);
+  }
+});
+
+// Функция для сброса класса is-active
+function removeActiveClass() {
+  buttons.forEach(button => button.classList.remove('is-active'));
+}
+
+// Создаем IntersectionObserver
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Удаляем is-active со всех кнопок
+      removeActiveClass();
+
+      // Добавляем is-active к соответствующей кнопке
+      const activeButton = sectionButtonMap.get(entry.target);
+      if (activeButton) {
+        activeButton.classList.add('is-active');
+      }
+    }
+  });
+}, {
+  root: null,
+  rootMargin: `-${headerHeight}px 0px 0px 0px`,
+  threshold: 0.25
+});
+
+// Наблюдаем за каждой секцией
+sections.forEach(section => observer.observe(section));
+
+// Добавляем клик для прокрутки и управления классом
+buttons.forEach(button => {
+  button.addEventListener('click', event => {
+    const targetSelector = event.target.getAttribute('data-scroll-target');
+    const targetElement = document.querySelector(targetSelector);
+    if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+      // Удаляем is-active со всех кнопок
+      removeActiveClass();
+
+      // Добавляем is-active к нажатой кнопке
+      button.classList.add('is-active');
+
+      // Скроллим к секции
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
 
 /***/ }),
 
