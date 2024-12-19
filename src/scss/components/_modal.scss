@@ -217,6 +217,8 @@
 }
 
 .modal-info {
+  display: flex;
+  flex-direction: column;
 
   &-header {
     display: flex;
@@ -336,11 +338,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.25rem;
-    margin-top: 1.25rem;
+    margin-top: auto;
+    padding-top: 1.25rem;
 
     @media (min-width: 992px) {
+      flex-wrap: nowrap;
       gap: 3.125rem;
-      margin-top: 2rem;
+      padding-top: 2rem;
     }
   }
 

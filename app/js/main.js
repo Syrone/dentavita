@@ -5212,13 +5212,17 @@ function withinMaxClamp(min, value, max) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/header.js */ "./src/js/components/header.js");
-/* harmony import */ var _components_transfer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/transfer.js */ "./src/js/components/transfer.js");
-/* harmony import */ var _components_swiper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/swiper.js */ "./src/js/components/swiper.js");
-/* harmony import */ var _components_offcanvas_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/offcanvas.js */ "./src/js/components/offcanvas.js");
-/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
-/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
-/* harmony import */ var _components_popper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/popper.js */ "./src/js/components/popper.js");
-/* harmony import */ var _components_imask_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/imask.js */ "./src/js/components/imask.js");
+/* harmony import */ var _components_renderCard_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/renderCard.js */ "./src/js/components/renderCard.js");
+/* harmony import */ var _components_renderModals_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/renderModals.js */ "./src/js/components/renderModals.js");
+/* harmony import */ var _components_transfer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/transfer.js */ "./src/js/components/transfer.js");
+/* harmony import */ var _components_swiper_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/swiper.js */ "./src/js/components/swiper.js");
+/* harmony import */ var _components_offcanvas_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/offcanvas.js */ "./src/js/components/offcanvas.js");
+/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
+/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
+/* harmony import */ var _components_popper_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/popper.js */ "./src/js/components/popper.js");
+/* harmony import */ var _components_imask_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/imask.js */ "./src/js/components/imask.js");
+
+
 
 
 
@@ -5404,8 +5408,12 @@ document.body.addEventListener('click', event => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/popper.js");
 
-document.querySelectorAll('[data-popover]')?.forEach(element => {
-  (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_0__.createPopper)(element, element.querySelector('.tooltip'), {
+document.querySelectorAll('[data-popover]').forEach(element => {
+  const tooltip = element.querySelector('.tooltip');
+  if (!tooltip) return;
+
+  // Создаем Popper
+  const popperInstance = (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_0__.createPopper)(element, tooltip, {
     placement: 'top',
     modifiers: [{
       name: 'offset',
@@ -5414,7 +5422,163 @@ document.querySelectorAll('[data-popover]')?.forEach(element => {
       }
     }]
   });
+
+  // Обновляем Popper при наведении
+  element.addEventListener('mouseenter', () => {
+    popperInstance.update();
+  });
 });
+
+/***/ }),
+
+/***/ "./src/js/components/renderCard.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/renderCard.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+for (const key in window.objectDoctors) {
+  if (window.objectDoctors.hasOwnProperty(key)) {
+    const doctor = window.objectDoctors[key];
+    const cardHTML = `
+      <div class="swiper-slide">
+        <article class="card">
+          <button type="button" class="stretched-link"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-staff-${key}"></button> 
+          <div class="card-pictures">
+            <span class="card-placeholder">
+              Подробнее
+              <span class="icon">
+                <svg>
+                  <use xlink:href="img/icons/plus.svg#svg-plus"></use>
+                </svg>
+              </span>
+            </span>
+            <img loading="lazy" src="${doctor.image}" class="card-image" width="264" height="375" alt="Картинка"> 
+          </div>
+          <h3 class="card-title">${doctor.surname} ${doctor.name[0].toUpperCase()}. ${doctor.patronymic[0].toUpperCase()}.</h3>
+          <p class="card-text">${doctor.position}</p>
+        </article>
+      </div>
+    `;
+    document.querySelectorAll('.staff .swiper-wrapper')?.forEach(element => {
+      element.insertAdjacentHTML('beforeend', cardHTML);
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./src/js/components/renderModals.js":
+/*!*******************************************!*\
+  !*** ./src/js/components/renderModals.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function createDoctorModals(doctors) {
+  const modalContainer = document.createElement('div'); // Контейнер для всех модальных окон
+  modalContainer.id = 'modals-container';
+  Object.keys(doctors).forEach(key => {
+    const doctor = doctors[key];
+    const modal = document.createElement('div');
+    modal.className = 'modal fade';
+    modal.id = `modal-staff-${key}`;
+    modal.tabIndex = -1;
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = `
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <span class="icon">
+              <svg>
+                <use xlink:href="img/icons/close.svg#svg-close"></use>
+              </svg>
+            </span>
+          </button>
+          <div class="modal-body">
+            <picture data-transfer-origin="modal-staff-picture-${key}" data-transfer-breakpoint="992" data-transfer-placement="first">
+              <img loading="lazy" src="${doctor.image}" class="image" width="270" height="350" alt="Картинка">
+            </picture>
+            <div class="modal-info">
+              <div class="modal-info-header" data-transfer-target="modal-staff-picture-${key}">
+                <div>
+                  <h2 class="modal-info-title">${doctor.fullName()}</h2>
+                  <p class="modal-info-job">${doctor.position}</p>
+                </div>
+              </div>
+              ${doctor.details && doctor.details.trim() ? `<p class="modal-info-descr">${doctor.details}</p>` : ''}
+							${doctor.skills && doctor.skills.length > 0 ? `
+								<div class="accordion">
+									<div class="accordion-item">
+										<h2 class="accordion-header">
+											<button class="accordion-button" type="button"
+												data-bs-toggle="collapse"
+												data-bs-target="#collapse-staff-${key}"
+												aria-expanded="true"
+												aria-controls="collapse-staff-${key}">
+												Профессиональные навыки
+												<span class="icon accordion-button-icon">
+													<svg>
+														<use xlink:href="img/icons/chevron-up.svg#svg-chevron-up"></use>
+													</svg>
+												</span>
+											</button>
+										</h2>
+										<div id="collapse-staff-${key}" class="accordion-collapse collapse show">
+											<div class="accordion-body">
+												<div class="accordion-body-content">
+													<ul class="list-reset modal-info-list">
+														${doctor.skills.map(skill => `<li class="modal-info-item">${skill}</li>`).join('')}
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								` : ''}
+              <div class="modal-info-footer">
+                <div class="modal-info-detail">
+                  <h4 class="modal-info-detail-title">Образование</h4>
+                  <ul class="list-reset modal-info-detail-list">
+                    ${doctor.education.map(item => `
+                      <li class="modal-info-detail-item" data-popover>
+                        <span class="tooltip">${item.detail}</span>
+                        <picture>
+                          <img loading="lazy" src="${item.icon}" class="modal-info-detail-image" width="60" height="60" alt="Картинка">
+                        </picture>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+                <div class="modal-info-detail">
+                  <h4 class="modal-info-detail-title">Повышение квалификации</h4>
+                  <ul class="list-reset modal-info-detail-list">
+                    ${doctor.raising.map(item => `
+                      <li class="modal-info-detail-item" data-popover>
+                        <span class="tooltip">${item.detail}</span>
+                        <picture>
+                          <img loading="lazy" src="${item.icon}" class="modal-info-detail-image" width="60" height="60" alt="Картинка">
+                        </picture>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    modalContainer.appendChild(modal);
+  });
+  document.body.appendChild(modalContainer);
+}
+createDoctorModals(window.objectDoctors);
 
 /***/ }),
 

@@ -31,6 +31,10 @@
 			}
 
 			.btn-inherit {
+				--_color: var(--gray);
+				--_color-hover: var(--text-color);
+				--_color-active: var(--text-color);
+
 				margin-right: .25em;
 			}
 		}

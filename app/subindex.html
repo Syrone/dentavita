@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Стоматология ДентаВита</title>
+  <link rel="preload" href="fonts/DroidSans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/DroidSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/RobotoCondensed-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<script>
+  window.objectDoctors = {
+    0: {
+      image: 'img/staff/image-21.webp',
+      name: 'Ольга',
+      surname: 'Башарова',
+      patronymic: 'Игоревна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог терапевт',
+      details: ``,
+      skills: [
+        'Лечение кариеса и некариозных поражений твёрдых тканей зубов',
+        'Лечение кариеса и некариозных поражений твёрдых тканей зубов',
+        'Эндодонтия с применением высокотехнологических методов лечения',
+        'Перелечивание корневых каналов зубов',
+        'Отбеливание зубов, эндо отбеливание зубов',
+        'Профессиональная гигиена полости рта, профилактика заболеваний твёрдых тканей зубов',
+        'Терапия тканей пародонта аппаратом Vector',
+      ],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Российский Университет Дружбы Народов (медицинский факультет, отделение «стоматология»)'},
+        { icon: 'img/staff/diploma.webp', detail: 'Российский Университет Дружбы Народов (медицинский факультет, отделение «стоматология»)'},
+        { icon: 'img/staff/diploma.webp', detail: 'Московский Государственный Медико-Стоматологический Университет (клиническая ординатура по специальности «терапевтическая стоматология»).'}
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Различные виды отбеливания зубов. Показания, противопоказания и возможные осложнения. Эстетическая реставрация после отбеливания'},
+        { icon: 'img/staff/cure.webp', detail: 'Лечение пульпита биологическим методом. Применение инновационного материала Biodentine'},
+        { icon: 'img/staff/restoration.webp', detail: 'Современные методы устранения дисколоритов зубов'},
+        { icon: 'img/staff/cure.webp', detail: 'Новые технологии диагностики и лечения пульпита'},
+        { icon: 'img/staff/molecules.webp', detail: 'Лучевая диагностика ВНЧС, 3D-визуализация травм зубов и ЧЛО, кист, опухолей'},
+      ]
+    },
+    1: {
+      image: 'img/staff/image-22.webp',
+      name: 'Людмила',
+      surname: 'Бондаренко',
+      patronymic: 'Анатольевна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог терапевт',
+      details: ``,
+      skills: [],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Донецкий Государственный медицинский институт.'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Семинар по отбеливанию зубов и мастер-класс часовой клинической системой ZOOM'},
+        { icon: 'img/staff/cure.webp', detail: 'Как достичь совершенства в эндодонтическом лечении и реставрации депульпированных зубов'},
+        { icon: 'img/staff/restoration.webp', detail: 'Клиника и лечение стеклоиономерными цементами и светоотверждающими композитами'},
+        { icon: 'img/staff/deletion.webp', detail: 'Современные концепции в эндодонтии'},
+        { icon: 'img/staff/restoration.webp', detail: 'Проблемы перелечивания корневых каналов. Реставрация после эндодонтического лечения'},
+      ]
+    },
+    2: {
+      image: 'img/staff/image-23.webp',
+      name: 'Марика',
+      surname: 'Губиш',
+      patronymic: 'Ярославовна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог терапевт',
+      details: ``,
+      skills: [],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Московский Медицинский стоматологический институт им. Н.А. Семашко'},
+        { icon: 'img/staff/diploma.webp', detail: 'Клиническая ординатура ММСИ им. Семашко по специальности «терапевтическая стоматология»'},
+      ],
+      raising: [
+        { icon: 'img/staff/deletion.webp', detail: 'Учебный центр « Био Сан» Осложнения эндодонтического лечения, Ошибки и методы их исправления'},
+        { icon: 'img/staff/molecules.webp', detail: 'Обработка корневых каналов NITI инструментами системы M-two ( VDW). Пломбирование корневых каналов системой Bee Fill'},
+        { icon: 'img/staff/cure.webp', detail: 'Проблемы перелечивание корневых каналов. Реставрация после эндодонтического лечения'},
+        { icon: 'img/staff/restoration.webp', detail: 'Современные реставрационные системы'},
+        { icon: 'img/staff/deletion.webp', detail: 'Осложнения эндодонтического лечения, Ошибки и методы их исправления'},
+      ]
+    },
+    3: {
+      image: 'img/staff/image-24.webp',
+      name: 'Екатерина',
+      surname: 'Делидова',
+      patronymic: 'Владимировна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог хирург, пародонтолог, кмн',
+      details: `
+        Екатерина Владимировна в совершенстве владеет навыками профилактики
+        стоматологических заболеваний, хирургической стоматологии, дентальной имплантологии,
+        восстановительной реконструктивной хирургии мягких тканей и костной ткани в полости рта,
+        современными методами диагностики заболеваний челюстно-лицевой области, обследования
+        и лечения пациентов с заболеваний пародонта. Она работает в концепции сохранения зубов
+        “TISSUE MASTER”-малоинвазивных методов лечения.
+        <br>
+        <br>
+        Работает в концепции сохранения здоровья, долголетия и повышения качества человеческой жизни.
+        <br>
+        <br>
+        Ведет диспансерное наблюдение пациентов. Проводит онкоскрининг в полости рта.
+      `,
+      skills: [],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Пермская Государственная Медицинская Академия и клиническая интернатура по специальности - хирургическая стоматология'},
+        { icon: 'img/staff/diploma.webp', detail: 'Московский Медико-Стоматологический Университет им. А.И. Евдокимова'},
+        { icon: 'img/staff/diploma.webp', detail: 'Преподавательская деятельность, ассистент Кафедры факультетской хирургической стоматологии и имплантологии МГМСУ им. А.И. Евдокимова'},
+      ],
+      raising: [
+        { icon: 'img/staff/implant.webp', detail: 'Методики сохранения и научно-обоснованные протоколы восстановления и твердых и мягких тканей в области имплантатов'},
+        { icon: 'img/staff/cure.webp', detail: 'Костная аугментация в имплантологическом лечении'},
+        { icon: 'img/staff/restoration.webp', detail: 'Диагностика, лечение и профилактика периимплантитов для хирургов и ортопедов. Современные концепции'},
+        { icon: 'img/staff/deletion.webp', detail: 'Малоинвазивная хирургия'},
+        { icon: 'img/staff/implant.webp', detail: 'Костная аугментация в дентальной имплантологии'},
+      ]
+    },
+    4: {
+      image: 'img/staff/image-25.webp',
+      name: 'Марина',
+      surname: 'Дюдина',
+      patronymic: 'Владимировна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог терапевт',
+      details: ``,
+      skills: [
+        'Отбеливание',
+        'Профилактика стоматологических заболеваний',
+        'Профессиональная гигиена полости рта',
+        'Анестезия',
+        'Лечение кариеса и некариозных поражений зубов',
+        'Реставрация',
+        'Эндодонтия',
+        'Микропротезирование',
+        'Консервативное лечение тканей пародонта аппаратом «Вектор»',
+      ],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Омская государственная медицинская академия'},
+        { icon: 'img/staff/diploma.webp', detail: 'Клиничиская ординатура ЦНИИС по специальности "терапевтическая стоматология"'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'ICON-инфильтрационная концепция'},
+        { icon: 'img/staff/cure.webp', detail: 'Современные технологии нехирургического лечения пародонтита с использованием системы «Вектор»'},
+        { icon: 'img/staff/deletion.webp', detail: 'Вращающиеся NiTi файлы системы M-two'},
+        { icon: 'img/staff/restoration.webp', detail: 'Лечение пульпита биологическим методом. Применение инновационного материала Biodentine'},
+        { icon: 'img/staff/deletion.webp', detail: 'Лучевая диагностика ВНЧС, 3D-визуализация травм зубов и ЧЛО, кист, опухолей'},
+      ]
+    },
+    5: {
+      image: 'img/staff/image-26.webp',
+      name: 'Анна',
+      surname: 'Ершова',
+      patronymic: 'Михайловна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог хирург, пародонтолог, кмн',
+      details: ``,
+      skills: [
+        'Удаление зубов',
+        'Дентальная имплантация',
+        'Костная пластика',
+        'Пластическая хирургическая пародонтология',
+        'Апикальная хирургия',
+        'Лечение заболеваний пародонта',
+      ],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'ГОУ ВПО Московская медицинская академия им. И.М. Сеченова'},
+        { icon: 'img/staff/diploma.webp', detail: 'Интернатура. ГБОУ ВПО Первый Московский государственный медицинский университет им. И.М. Сеченова'},
+        { icon: 'img/staff/diploma.webp', detail: 'Ординатура. ГБОУ ВПО Первый Московский государственный медицинский университет им. И.М. Сеченова'},
+        { icon: 'img/staff/diploma.webp', detail: 'Аспирантура. ГБОУ ВПО Первый Московский государственный медицинский университет им. И.М. Сеченова'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Семинар по дентальной имплантации Astra Tech'},
+        { icon: 'img/staff/cure.webp', detail: 'Лекционно-практический курс «Эндоскопическая диагностика и лечение сиалолитиаза'},
+        { icon: 'img/staff/deletion.webp', detail: 'Травма челюстно-лицевой области'},
+        { icon: 'img/staff/restoration.webp', detail: 'Лекционно-практический курс «Синус-лифтинг»'},
+        { icon: 'img/staff/deletion.webp', detail: 'Устранение рецессии десны на зубах и имплантатах. Коррекция дефектов альвеолярного гребня мягкими ткнями'},
+      ]
+    },
+    6: {
+      image: 'img/staff/image-27.webp',
+      name: 'Ольга',
+      surname: 'Ивановская',
+      patronymic: 'Игоревна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог терапевт',
+      details: ``,
+      skills: [],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Московский государственный медико-стоматологический университет'},
+        { icon: 'img/staff/educating.webp', detail: 'Московский государственный медико-стоматологический университет. Факультет последипломного образования, Стоматология терапевтическая'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'От эстетики фронта до тотальной композитной реабилитации'},
+        { icon: 'img/staff/cure.webp', detail: 'Инновационные подходы к эндодонтическому лечению'},
+        { icon: 'img/staff/deletion.webp', detail: 'Препарирование, очистка и обтурация корневого канала'},
+        { icon: 'img/staff/restoration.webp', detail: 'Практический курс по реставрациям фронтальных зубов'},
+      ]
+    },
+    7: {
+      image: 'img/staff/image-28.webp',
+      name: 'Наталья',
+      surname: 'Извекова',
+      patronymic: 'Владимировна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог ортопед',
+      details: ``,
+      skills: [],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Московский Медицинский стоматологический институт им. Н.А. Семашко'},
+        { icon: 'img/staff/diploma.webp', detail: 'Ординатура по специальности «Ортопедическая стоматология»'},
+      ],
+      raising: [
+        { icon: 'img/staff/implant.webp', detail: 'Продвинутые методики протезирования с опорой на имплантаты - от планирования до реализации'},
+        { icon: 'img/staff/deletion.webp', detail: 'Лучевая диагностика ВНЧС,3D-визуализация травм зубов и ЧЛО, кист, опухолей'},
+        { icon: 'img/staff/cure.webp', detail: 'Препарирование зубов под виниры'},
+        { icon: 'img/staff/restoration.webp', detail: 'Первый Глобальный Эстетический конгресс для ортопедов и зубных техников'},
+        { icon: 'img/staff/implant.webp', detail: 'Сложные эстетические протоколы имплантологического лечения'},
+      ]
+    },
+    8: {
+      image: 'img/staff/image-29.webp',
+      name: 'Вера',
+      surname: 'Князева',
+      patronymic: 'Сергеевна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог терапевт',
+      details: ``,
+      skills: [],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Московский Государственный Медико-Стоматологический Университет по специальности стоматология'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Отбеливание зубов клинической системой Zoom'},
+        { icon: 'img/staff/cure.webp', detail: 'Революционные технологии в эндодонтическом лечении'},
+        { icon: 'img/staff/restoration.webp', detail: 'Современные технологии нехирургического лечения пародонта с использованием системы Вектор'},
+        { icon: 'img/staff/deletion.webp', detail: 'Лучевая диагностика ВНЧС, 3D-визуализация травм зубов и ЧЛО, кист, опухолей'},
+        { icon: 'img/staff/cure.webp', detail: 'Новые аспекты оптимизации лечения корневых каналов'},
+      ]
+    },
+    9: {
+      image: 'img/staff/image-30.webp',
+      name: 'Ричард',
+      surname: 'Лушков',
+      patronymic: 'Михайлович',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог ортопед, кмн',
+      details: ``,
+      skills: [
+        'Съемное и несъемное протезирование зубов',
+        'Восстановление эстетики винирами',
+        'Протезирование на имплантах',
+        'Междисциплинарный подход для восстановления работы всего организма',
+        'Сплинт-терапия',
+        'Функциональная диагностика с помощью миографа и аксиографа',
+        'Восстановление эстетики винирами и люминирами',
+        'Создание «голливудских улыбок» по принципам «золотого сечения»',
+        'Протезирование на имплантах Straumann, Nobel Biocare',
+        'Создание полных протезов при имплантации с немедленной нагрузкой',
+        'Цифровой дизайн улыбки',
+        'Anti-age-подход: омоложение через протезирование',
+        'Восстановительные и культевые вкладки',
+        'Применение передовых материалов для протезирования: E.max, Empress, Prettau',
+      ],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Первый Московский государственный медицинский университет им. И.М. Сеченова по специальности «стоматология»'},
+        { icon: 'img/staff/diploma.webp', detail: 'Повышение квалификации в МГМУ им. И.М. Сеченова по специальности «стоматология общей практики»'},
+        { icon: 'img/staff/diploma.webp', detail: 'Повышение квалификации в МГМУ им. И.М. Сеченова по специальности «стоматология хирургическая»'},
+      ],
+      raising: [
+        { icon: 'img/staff/implant.webp', detail: 'Вводный курс по протезированию на имплантатах'},
+        { icon: 'img/staff/cure.webp', detail: 'Эндодонто-пародонтальные дефекты. Хирургическое лечение при-поражениях эндодонта'},
+        { icon: 'img/staff/implant.webp', detail: 'Разоблачение полного съемного протезирования'},
+        { icon: 'img/staff/restoration.webp', detail: 'Эстетико-функциональная реабилитация пациентов при помощи непрямых керамических реставраций'},
+        { icon: 'img/staff/deletion.webp', detail: 'Керамические виниры. От планирования до фиксации'},
+      ]
+    },
+    10: {
+      image: 'img/staff/image-31.webp',
+      name: 'Анна',
+      surname: 'Мальцева',
+      patronymic: 'Гарриевна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог ортопед',
+      details: ``,
+      skills: [],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'ФГАОУ ВО Первый МГМУ им. И.М. Сеченова / Ассистент кафедры детской, профилактической стоматологии и ортодонтии Института стоматологии им. Е.В. Боровского'},
+        { icon: 'img/staff/diploma.webp', detail: 'ФГАОУ ВО Первый МГМУ им. И.М. Сеченова / Ведущий документовед Учебно-методического отдела Учебного управления'},
+        { icon: 'img/staff/diploma.webp', detail: 'ФГАОУ ВО Первый МГМУ им. И.М. Сеченова / Старший лаборант кафедры детской, профилактической стоматологии и ортодонтии Института стоматологии им. Е.В. Боровского'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Основы применения телемедицинских технологий'},
+        { icon: 'img/staff/cure.webp', detail: 'Флексы как прогрессивный метод лечения в современной ортодонтии'},
+        { icon: 'img/staff/implant.webp', detail: 'Особенности тотальной реабилитации пациентов, как избежать нарушений ВНЧС при тотальной протезировании и ортодонтическом лечении'},
+        { icon: 'img/staff/restoration.webp', detail: 'Непрямые реставрации в детской стоматологии'},
+        { icon: 'img/staff/deletion.webp', detail: 'Системный анализ научной литературы в медицине и биомедицине: систематический обзор и мета-анализ'},
+      ]
+    },
+    11: {
+      image: 'img/staff/image-32.webp',
+      name: 'Артём',
+      surname: 'Мирзоян',
+      patronymic: 'Сергеевич',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог ортопед',
+      details: `
+        Кроме хорошо развитых мануальных навыков обладаю необходимыми для хорошего
+        врача качествами, такими как: ответственность, внимательность, быстрая обучаемость,
+        желание развиваться и совершенствоваться в профессии, чувство такта, стрессоустойчивость,
+        желание помогать и любовь к людям. В коллективе проявляю себя вовлеченным в
+        командную работу сотрудником.
+      `,
+      skills: [
+        'Комплексная консультация',
+        'Работа в бинокулярах',
+        'Работа в микроскопе',
+        'Протезирования на зубах',
+        'Протезирования на имплантатах (Straumann, Nobel, Astra, Neodent, Xive, Osstem, Dentium)',
+        'Протезирования по концепции All-on-4 и All-on-6',
+        'Протезирования пациентов с полной адентии',
+        'Тотальное протезирование',
+        'Работа в цифровом протоколе с использованием внутриротового сканера в практике (3Shape, Primescan, Medit, Shining 3d)',
+      ],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'МГМСУ им. Евдокимова'},
+        { icon: 'img/staff/diploma.webp', detail: 'Ординатура по специальности «Стоматология ортопедическая» в ЦГМА Управления делами Президента РФ'},
+      ],
+      raising: [
+        { icon: 'img/staff/deletion.webp', detail: 'Как избежать нарушений ВНЧС при тотальном протезировании и ортодонтическом лечении'},
+        { icon: 'img/staff/restoration.webp', detail: 'Искусство художественной фотографии в стоматологии'},
+        { icon: 'img/staff/implant.webp', detail: 'Протезирование оригинальными ортопедическими компонентами на имплантатах Nobel Biocare'},
+      ]
+    },
+    12: {
+      image: 'img/staff/image-33.webp',
+      name: 'Елена',
+      surname: 'Морозова',
+      patronymic: 'Сергеевна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог терапевт',
+      details: ``,
+      skills: [
+        'Лечение кариеса и его осложнений',
+        'Лечение некариозных поражений твердых тканей зуба',
+        'Эндодонтическое лечение с использованием высокотехнологических современных методик',
+        'Реставрация зубов',
+        'Профессиональная гигиена полости рта',
+        'Отбеливания зубов при помощи современных методик',
+        'Микропротезирование',
+      ],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Московский государственный медико-стоматологический университет'},
+        { icon: 'img/staff/diploma.webp', detail: 'Интернатура при Московском государственном медико-стоматологическом университете'},
+        { icon: 'img/staff/diploma.webp', detail: 'Ординатура на базе кафедры ортопедической стоматологии Московского государственного медико-стоматологического университета имени А.И.Евдокимова'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Прошла профессиональную переподготовку по терапевтической стоматологии'},
+        { icon: 'img/staff/cure.webp', detail: 'Получила разрешение на работу в Германии, 2020 - 2024 г. - врач-стоматолог общей практики в стоматологической клинике "MVZ Platto & Kollegen", г. Берлин'},
+      ]
+    },
+    13: {
+      image: 'img/staff/image-34.webp',
+      name: 'Регина',
+      surname: 'Мосейко',
+      patronymic: 'Альфредовна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог ортодонт, кмн',
+      details: ``,
+      skills: [
+        'Лечение аномалий прикуса у взрослых и детей прозрачными элайнерами',
+        'Применение несъёмных аппаратов на костной опоре для расширения и дистализации',
+        'Комбинированные методики лечения с сочетанием комтной опоры с элайнерами или брекетами индивидуального изготовления',
+        'Раннее лечение аномалий 3 класса у детей аппаратами на костной опоре',
+        'Подготовка к ортогнатической хирургии, имплантации и протезированию',
+      ],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Московский медицинский стоматологический институт им. Н.А. Семашко'},
+        { icon: 'img/staff/diploma.webp', detail: 'Клиническая ординатура кафедры ортодонтии и детского протезирования ММСИ'},
+        { icon: 'img/staff/diploma.webp', detail: 'Ассистент Кафедры ортодонтии и детского протезирования МГМСУ в течение 11 лет'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Международный ортодонтический курс'},
+        { icon: 'img/staff/cure.webp', detail: 'Ортодонтическая подготовка к ортогнатической хирургии'},
+        { icon: 'img/staff/restoration.webp', detail: 'Invisalign Masterclass Parts 1&2», Dental Couture & Partners'},
+        { icon: 'img/staff/deletion.webp', detail: 'Лучевая диагностика ВНЧС, 3D-визуализация травм зубов и ЧЛО, кист, опухолей'},
+        { icon: 'img/staff/restoration.webp', detail: 'Функциональная ортодонтия'},
+      ]
+    },
+    14: {
+      image: 'img/staff/image-35.webp',
+      name: 'Ренат',
+      surname: 'Мухаметдинов',
+      patronymic: 'Борисович',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог ортопед',
+      details: ``,
+      skills: [
+        'Оказание ортопедических стоматологических услуг в полном объёме',
+        'Контроль и соблюдение качества подготовки к протезированию',
+        'Диагностика, анализ, консультация пациентов с помощью ОПТГ, КТ, прицельной рентгенограммы зубов',
+        'Опыт работы с цифровыми методами диагностики и планирования лечения (DSD)',
+        'Опыт и практическое знание работы систем All-on-4, AII-on-6 и различных методик протезирования на имплантах, в частности одномоментной немедленной нагрузкой на импланты',
+        'Тотальная реабилитация, восстановление зубных рядов стоматологических пациентов сразличными методиками как на зубах, так и на имплантах (одиночные и мостовидные конструкции)',
+        'Эстетическое протезирование с применением керамических виниров, коронок (E-max Press)',
+        'Реставрация зубов прямым методом любой сложности',
+        'Подготовка зубов после эндодонтического лечения для протезирования коронками с помощью метода Билдап, а также культевыми-штифтовыми вкладками',
+        'Микропротезирование зубов – керамические вкладки, накладки, виниры',
+        'Протезирование с полной или частичной адентией с помощью съёмного протезирования или условно-съёмного протезирования',
+        'Работа с мягкими тканями в области имплантов и зубов, создание овойдов и контуров прорезывания, восстановление десневых сосочков',
+        'Диагностика и лечение ВНЧС, а также профилактика заболевания ВНЧС',
+        'Работа с увеличением',
+        'Работа в Цифровом протоколе, а также комбинированный метод (аналог/цифра), небольшой опыт со сканером 3shape',
+        'Протезирование пациентов после ортодонтического лечения',
+        'Работа с программой Инфодент',
+        'Работа с фотопротоколом',
+        'Протезирование на имплантационных системах: Nobel Biocare, Astra Tech, Straumann, Osstem, Dentium, Implantium, Miss, Apolonia CSM, Xive, Alpha Bio.',
+      ],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Московский Государственный Медико-Стоматологический Университет им. А.И. Евдокимова'},
+        { icon: 'img/staff/diploma.webp', detail: 'Клиническая интернатура в МГМСУ и на базе стоматологической поликлиники №5 ЗАО'},
+        { icon: 'img/staff/diploma.webp', detail: 'Клиническая ординатура МГМСУ г. Москва на кафедре Госпитальной терапевтической стоматологии'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Поиск оптимальной эстетики при протезировании безметалловой керамикой на каркасах из диоксида циркония'},
+        { icon: 'img/staff/cure.webp', detail: 'Лечение больных с частичной адентией, с применением керамических и металлокерамических конструкций'},
+        { icon: 'img/staff/deletion.webp', detail: 'Эстетичные и функциональные непрямые реставрации жевательных зубов-вкладки, накладки. Критерии выбора'},
+        { icon: 'img/staff/restoration.webp', detail: 'Реставрация зубов вкладками, винирами, конструкциями из безметалловой керамики с использованием системы IPS.Empress'},
+        { icon: 'img/staff/implant.webp', detail: 'Основы принятия решений в имплантологии. Хирургический и ортопедический аспекты'},
+      ]
+    },
+    15: {
+      image: 'img/staff/image-36.webp',
+      name: 'Анна',
+      surname: 'Спиридонова',
+      patronymic: 'Олеговна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог терапевт',
+      details: ``,
+      skills: [
+        'Лечение кариеса и некариозных поражений зубов',
+        'Художественная реставрация',
+        'Эндодонтия',
+        'Отбеливание зубов, в том числе эндо отбеливание',
+        'Профессиональная гигиена',
+        'Терапия тканей пародонта аппаратом Vector',
+      ],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Новосибирский Государственный медицинский институт, клиническая ординатура на кафедре терапевтической стоматологии'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Конгресс стоматологов-Новые горизонты-2016'},
+        { icon: 'img/staff/cure.webp', detail: 'Современные технологии нехирургического лечения пародонтита с использованием системы «Вектор»'},
+        { icon: 'img/staff/restoration.webp', detail: 'Реставрационная терапия с применением оборудования, материалов и методик'},
+        { icon: 'img/staff/deletion.webp', detail: 'Лучевая диагностика ВНЧС, 3D-визуализация травм зубов и ЧЛО, кист, опухолей'},
+        { icon: 'img/staff/restoration.webp', detail: 'Оптимальные техники прямой реставрации фронтальной группы зубов'},
+      ]
+    },
+    16: {
+      image: 'img/staff/image-37.webp',
+      name: 'Наталья',
+      surname: 'Тимачева',
+      patronymic: 'Юрьевна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Главный врач, врач-стоматолог терапевт, кмн',
+      details: `
+        Наталья Юрьевна опытный доктор. Разносторонне образованный и
+        высококвалифицированый специалист, умело сочетающий практическую деятельность с
+        научной. Наталья Юрьевна занимается микропротезированием, эстетическими
+        реставрациями, проводит процедуры кабинетного и домашнего отбеливания зубов. Однако
+        наибольший интерес вызывают проблемы лечения корневых каналов. Профессиональное мастерство и умение использовать самые современные достижения стоматологии на
+        практике, позволяют ей всегда достигать максимального результата. Наталья Юрьевна
+        внимательно и бережно относится к каждому из своих пациентов и искренне разделяет их
+        радость, когда лечение успешно завершено.
+      `,
+      skills: [],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Ординатура, аспирантура на базе кафедры госпитальной терапевтической стоматологии Московского Медикостоматологического Университета им. А.И.Евдокимова'},
+        { icon: 'img/staff/diploma.webp', detail: 'Прошла стажировку в Италии у профессоров Nicola M Grande и Gianluca Plotino'},
+        { icon: 'img/staff/diploma.webp', detail: 'В 2005 защитила кандидатскую диссертацию'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Эндодонтия по правилам'},
+        { icon: 'img/staff/cure.webp', detail: 'Обезболивание в амбулаторной стоматологической практике'},
+        { icon: 'img/staff/implant.webp', detail: 'Актуальные аспекты 3D-визуализации в стоматологии, челюстно-лицевой хирургии и оторинолярингологии'},
+        { icon: 'img/staff/restoration.webp', detail: '"Функциональное и этетическое восстановление дефектов твердых тканей. Клинические аспекты микропротезирования'},
+        { icon: 'img/staff/deletion.webp', detail: 'Лучевая диагностика ВНЧС, 3D-визуализация травм зубов и ЧЛО, кист, опухолей'},
+      ]
+    },
+    17: {
+      image: 'img/staff/image-38.webp',
+      name: 'Зарина',
+      surname: 'Хадзиева',
+      patronymic: 'Солтановна',
+      fullName: function () {
+        return `${this.surname} ${this.name} ${this.patronymic}`
+      },
+      position: 'Врач-стоматолог терапевт, кмн',
+      details: ``,
+      skills: [
+        'Лечение кариеса и его осложнений',
+        'Лечение некариозных поражений зубов',
+        'Эндодонтия, в том числе с использованием операционного микроскопа',
+        'Микропротезирование керамическими вкладками',
+        'Клиническое отбеливание',
+        'Профессиональная гигиена',
+        'Консервативное лечение заболеваний тканей пародонта аппаратом "Vector"',
+      ],
+      education: [
+        { icon: 'img/staff/educating.webp', detail: 'Ординатура на базе кафедры стоматологии общей практики Московского Государственного медико-стоматологического университета им. А. Н. Семашко'},
+        { icon: 'img/staff/diploma.webp', detail: 'Аспирантура на базе кафедры госпитальной терапевтической стоматологии Московского Государственного медико-стоматологического университета им. А. И. Евдокимова'},
+        { icon: 'img/staff/diploma.webp', detail: 'В 2004г. защитила кандидатскую диссертацию'},
+      ],
+      raising: [
+        { icon: 'img/staff/molecules.webp', detail: 'Функциональное и этетическое восстановление дефектов твердых тканей. Клинические аспекты микропротезирования'},
+        { icon: 'img/staff/cure.webp', detail: 'Лечение пульпита биологическим методом. Применение инновационного материала Biodentine'},
+        { icon: 'img/staff/restoration.webp', detail: 'Путеводитель по реставрации боковых зубов'},
+        { icon: 'img/staff/deletion.webp', detail: 'Лучевая диагностика ВНЧС, 3D-визуализация травм зубов и ЧЛО, кист, опухолей'},
+        { icon: 'img/staff/restoration.webp', detail: 'Реставрация, ошибки и их устранение'},
+      ]
+    },
+  }
+</script>
+<body class="page-body">
+  <h1 class="visually-hidden">
+    Главная страница
+</h1>
+
+  <div class="site-container">
+    <header class="header">
+      <div class="header-top">
+        <div class="container">
+          <p class="header-top-start">
+            <span class="icon">
+              <svg>
+                <use xlink:href="img/icons/location.svg#svg-location"></use>
+              </svg>
+            </span>
+            Клиника:
+            <a href="index.html" class="btn btn-inherit">
+              На Красных Воротах
+            </a>
+            <a href="subindex.html" class="btn btn-inherit is-active text-underline">
+              Хлебный переулок
+            </a>
+          </p>
+
+          <p class="header-top-end"
+            data-transfer-origin="header-top-end"
+            data-transfer-breakpoint="1200">
+            <span class="text-color-gray">Пн-Пт. с 8:00 до 21:00</span>
+
+            <a href="tel:+74957349959" class="btn header-phone">
+              +7 495 734-99-59
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="header-main">
+        <div class="container">
+          <a href="#" class="brand">
+            <picture>
+              <source srcset="img/logo.webp" type="image/webp">
+              <img loading="lazy" src="img/logo.png" class="image" width="40" height="40" alt="Лого">
+            </picture>
+            <span>
+              ДентаВита
+            </span>
+          </a>
+
+          <ul class="list-reset navbar-nav"
+            data-transfer-origin="navbar-nav"
+            data-transfer-breakpoint="1200">
+            <li class="nav-item">
+              <a href="#" class="btn nav-link">
+                Услуги
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="btn nav-link">
+                Акции
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="btn nav-link">
+                Преимущества
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="btn nav-link">
+                Методы лечения
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="btn nav-link">
+                Фото
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="btn nav-link">
+                Врачи
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="btn nav-link">
+                О нас
+              </a>
+            </li>
+          </ul>
+
+          <ul class="list-reset navbar-buttons"
+            data-transfer-origin="navbar-buttons"
+            data-transfer-breakpoint="1200"
+            data-transfer-placement="first">
+            <li class="nav-item">
+              <a href="#" class="btn btn-base btn-icon nav-link">
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-base btn-light nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#modal-form">
+                Записаться
+
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="img/icons/plus-circle.svg#svg-plus-circle"></use>
+                  </svg>
+                </span>
+              </button>
+            </li>
+          </ul>
+
+          <button class="btn btn-menu" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navigation"
+            aria-controls="Навигационное меню">
+            <span class="icon">
+              <svg>
+                <use xlink:href="img/icons/menu.svg#svg-menu"></use>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main-section">
+        <section class="section hero">
+          <div class="container">
+            <div class="hero-content">
+              <span class="decoration blob-1"></span>
+              <span class="decoration blob-2"></span>
+              <span class="decoration teeth-1"></span>
+              <span class="decoration teeth-2"></span>
+
+              <h2 class="hero-content-title h1">
+                Заботимся о вашем здоровье и <span class="text-color-secondary"><span class="text-placeholder">гарантируем</span> бережное отношение</span>
+              </h2>
+              <p class="hero-content-text">
+                Подберем индивидуальную программу лечения любой сложности каждому пациенту
+              </p>
+              <button type="button" class="btn btn-xl btn-primary hero-content-btn"
+                data-transfer-origin="button-fixed"
+                data-transfer-breakpoint="992"
+                data-bs-toggle="modal"
+                data-bs-target="#modal-form">
+                Записаться на консультацию
+              </button>
+
+              <picture class="hero-content-picture">
+                <source srcset="./img/hero/image.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/image.png" class="hero-content-image" width="660" height="910" alt="Картинка">
+              </picture>
+            </div>
+            <div class="ticker hero-ticker">
+              <ul class="list-reset ticker-list">
+                <li>
+                  Под седацией
+                </li>
+                <li>
+                  Хирургия и протезирование
+                </li>
+                <li>
+                  Гнатология
+                </li>
+                <li>
+                  Постлечебная поддержка
+                </li>
+              </ul>
+              <ul class="list-reset ticker-list">
+                <li>
+                  Под седацией
+                </li>
+                <li>
+                  Хирургия и протезирование
+                </li>
+                <li>
+                  Гнатология
+                </li>
+                <li>
+                  Постлечебная поддержка
+                </li>
+              </ul>
+            </div>
+
+            <ul class="list-reset hero-features">
+              <li class="hero-features-item">
+                <div class="hero-features-item-content">
+                  <h3 class="h1 hero-features-item-title">
+                    44 000
+                  </h3>
+
+                  <p class="hero-features-item-text">
+                    довольных пациентов в год
+                  </p>
+                </div>
+              </li>
+              <li class="hero-features-item">
+                <div class="hero-features-item-content">
+                  <h3 class="h1 hero-features-item-title">
+                    > 28 лет
+                  </h3>
+
+                  <p class="hero-features-item-text">
+                    успешного опыта
+                  </p>
+                </div>
+              </li>
+              <li class="hero-features-item">
+                <div class="hero-features-item-content">
+                  <h3 class="h1 hero-features-item-title">
+                    10
+                  </h3>
+
+                  <p class="hero-features-item-text">
+                    клиник в центре Москвы
+                  </p>
+                </div>
+              </li>
+              <li class="hero-features-item">
+                <div class="hero-features-item-content">
+                  <h3 class="h1 hero-features-item-title">
+                    300
+                  </h3>
+
+                  <p class="hero-features-item-text">
+                    Первоклассных врачей всех стоматологических специальностей
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section trust">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">
+                Почему ДентаВита доверяют уже более 28 лет
+              </h2>
+            </div>
+
+            <div class="trust-content">
+              <article class="trust-item">
+                <h3 class="trust-item-title">
+                  <span class="text-color-secondary">
+                    Подробный план лечения
+                    <span class="text-placeholder">в первый визит</span>
+                  </span>
+                </h3>
+
+                <ol class="list-reset trust-visit">
+                  <li class="trust-visit-item">
+                    Количество посещений
+                  </li>
+                  <li class="trust-visit-item">
+                    Этапы работы
+                  </li>
+                  <li class="trust-visit-item">
+                    Общая стоимость
+                  </li>
+                </ol>
+              </article>
+
+              <article class="trust-item">
+                <h3 class="trust-item-title">
+                  Лечение во сне
+                </h3>
+                <p class="trust-item-subtitle">
+                  Максимально безопасная седация для тех, кто боится стоматологов
+                </p>
+
+                <ul class="list-reset trust-cure">
+                  <li class="trust-cure-item">
+                    <img loading="lazy" src="img/icons/moon.svg" class="image" width="24" height="24" alt="Иконка">
+
+                    Все лечение проходит пока Вы спите
+                  </li>
+                  <li class="trust-cure-item">
+                    <img loading="lazy" src="img/icons/cure.svg" class="image" width="24" height="24" alt="Иконка">
+
+                    Постлечебная поддержка. Седация под контролем клинических анастезеологов ведущих стационаров Москвы
+                  </li>
+                  <li class="trust-cure-item">
+                    <img loading="lazy" src="img/icons/call.svg" class="image" width="24" height="24" alt="Иконка">
+
+                    Для вас рекомендации докторов во время и после лечения
+                  </li>
+                </ul>
+              </article>
+
+              <article class="trust-item trust-item--full">
+                <h3 class="trust-item-title">
+                  Лучшие материалы от надежных производителей
+                </h3>
+
+                <div class="swiper-container trust-swiper">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <article class="trust-swiper-item">
+                          <p>
+                            Пломбировочные <span class="text-color-primary">материалы от мировых лидеров:</span> Estelite, Filtek
+                          </p>
+                        </article>
+                      </div>
+                      <div class="swiper-slide">
+                        <article class="trust-swiper-item">
+                          <p>
+                            <span class="text-color-primary">Премиальные</span> имплантацинные системы (Strauman — Astra)
+                          </p>
+                        </article>
+                      </div>
+                      <div class="swiper-slide">
+                        <article class="trust-swiper-item">
+                          <p>
+                            <span class="text-color-secondary">Emax, Цирконий.</span>
+                            <br>
+                            Надежно и эстетично
+                          </p>
+                        </article>
+                      </div>
+                      <div class="swiper-slide">
+                        <article class="trust-swiper-item">
+                          <p>
+                            Все инновации ортодонтического лечения у нас
+                          </p>
+                        </article>
+                      </div>
+                      <div class="swiper-slide">
+                        <picture class="trust-swiper-picture">
+                          <source srcset="img/trust/image.webp" type="image/webp">
+                          <img loading="lazy" src="img/trust/image.jpg" class="trust-swiper-image" width="256" height="220" alt="Картинка">
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-pagination"></div>
+                </div>
+              </article>
+
+              <article class="trust-item trust-item--full trust-item--picture"
+                data-transfer-target="trust-recovery-picture"></article>
+
+              <article class="trust-item trust-item--full trust-item--recovery">
+                <h3 class="trust-item-title">
+                  Восстановление функции и эстетики
+                </h3>
+
+                <div class="trust-recovery">
+                  <ul class="list-reset trust-recovery-list">
+                    <li class="trust-recovery-item">
+                      Используем различные методы для каждого случая
+                    </li>
+                    <li class="trust-recovery-item">
+                      Костные трансплантаты — создадим условия для имплантации
+                    </li>
+                    <li class="trust-recovery-item">
+                      Biomimetic dentistry — эстетика, приближенная к природе
+                    </li>
+                    <li class="trust-recovery-item">
+                      Минимально инвазивные техники (аккуратно и бережно)
+                    </li>
+                    <li class="trust-recovery-item">
+                      Реабилитация ВНЧС пациентов — лечим пациентов с заболеваниями височно-нижнечелюстного сустава
+                    </li>
+                  </ul>
+
+                  <picture
+                    data-transfer-origin="trust-recovery-picture"
+                    data-transfer-breakpoint="992">
+                    <source srcset="img/trust/recovery.webp" type="image/webp">
+                    <img loading="lazy" src="img/trust/recovery.jpg" class="trust-recovery-image" width="660" height="313" alt="Картинка">
+                  </picture>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section favors">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="text-color-secondary text-placeholder">
+                  Наши услуги
+                </span>
+              </h2>
+            </div>
+
+            <ul id="accordion-favors" class="list-reset favors-list accordion">
+              <li class="favors-item">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse-favors-1"
+                      aria-expanded="true"
+                      aria-controls="collapse-favors-1">
+                      Первичный прием и диагностика
+
+                      <span class="icon accordion-button-icon">
+                        <svg>
+                          <use xlink:href="img/icons/chevron-up.svg#svg-chevron-up"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="collapse-favors-1" class="accordion-collapse collapse show"
+                    data-bs-parent="#accordion-favors">
+                    <div class="accordion-body">
+                      <div class="accordion-body-content">
+                        <picture>
+                          <source srcset="img/favors/image-1.webp" type="image/webp">
+                          <img loading="lazy" src="img/favors/image-1.png" class="image" width="100" height="100" alt="Картинка">
+                        </picture>
+
+                        <ul class="list">
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Прием врача-стоматолога первичный: осмотр, фотопротокол, консультация, план лечения
+                              </span>
+
+                              <span>
+                                3 900 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Высокоточное сканированиеодного зубного ряда интраоральным сканером
+                              </span>
+
+                              <span>
+                                4 900 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Коллегиальный план на комплексное лечение (консультации необходимых смежных специалистов, компьютерная томография)
+                              </span>
+
+                              <span>
+                                6 200 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                КЛКТ
+                              </span>
+
+                              <span>
+                                от 3 100 ₽
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="favors-item">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse-favors-2"
+                      aria-expanded="false"
+                      aria-controls="collapse-favors-2">
+                      Комфортное лечение в условиях седации
+
+                      <span class="icon accordion-button-icon">
+                        <svg>
+                          <use xlink:href="img/icons/chevron-up.svg#svg-chevron-up"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="collapse-favors-2" class="accordion-collapse collapse"
+                    data-bs-parent="#accordion-favors">
+                    <div class="accordion-body">
+                      <div class="accordion-body-content">
+                        <picture>
+                          <source srcset="img/favors/image-2.webp" type="image/webp">
+                          <img loading="lazy" src="img/favors/image-2.png" class="image" width="100" height="100" alt="Картинка">
+                        </picture>
+
+                        <ul class="list">
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Седация глубокая пропофол 30 минут
+                              </span>
+
+                              <span>
+                                9 000 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Закись азота
+                              </span>
+
+                              <span>
+                                6 000 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Севоран
+                              </span>
+
+                              <span>
+                                10 500 ₽
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="favors-item">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse-favors-3"
+                      aria-expanded="false"
+                      aria-controls="collapse-favors-3">
+                      Профилактика и эстетика
+
+                      <span class="icon accordion-button-icon">
+                        <svg>
+                          <use xlink:href="img/icons/chevron-up.svg#svg-chevron-up"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="collapse-favors-3" class="accordion-collapse collapse"
+                    data-bs-parent="#accordion-favors">
+                    <div class="accordion-body">
+                      <div class="accordion-body-content">
+                        <picture>
+                          <source srcset="img/favors/image-3.webp" type="image/webp">
+                          <img loading="lazy" src="img/favors/image-3.png" class="image" width="100" height="100" alt="Картинка">
+                        </picture>
+
+                        <ul class="list">
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Профессиональная гигиена полости рта и зубов
+                              </span>
+
+                              <span>
+                                10 700 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Профессиональное отбеливание зубов «ZOOM»/«FLASH»
+                              </span>
+
+                              <span>
+                                40 100 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Лечение фиссурного кариеса/клиновидного дефекта
+                              </span>
+
+                              <span>
+                                7 200 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Восстановление зуба пломбой (1 поверхность) с использование материалов из фотополимеров
+                              </span>
+
+                              <span>
+                                11 800 ₽
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="favors-item">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse-favors-4"
+                      aria-expanded="false"
+                      aria-controls="collapse-favors-4">
+                      Терапевтическое лечение с увеличением
+
+                      <span class="icon accordion-button-icon">
+                        <svg>
+                          <use xlink:href="img/icons/chevron-up.svg#svg-chevron-up"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="collapse-favors-4" class="accordion-collapse collapse"
+                    data-bs-parent="#accordion-favors">
+                    <div class="accordion-body">
+                      <div class="accordion-body-content">
+                        <picture>
+                          <source srcset="img/favors/image-4.webp" type="image/webp">
+                          <img loading="lazy" src="img/favors/image-4.png" class="image" width="100" height="100" alt="Картинка">
+                        </picture>
+
+                        <ul class="list">
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Применение микроскопа при обработке плохопроходимых каналов со сложной анатомией зуба
+                              </span>
+
+                              <span>
+                                9 800 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Применение микроскопа для оптимизации доступа при сложной анатомии зуба
+                              </span>
+
+                              <span>
+                                5 400 ₽
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="favors-item">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse-favors-5"
+                      aria-expanded="false"
+                      aria-controls="collapse-favors-5">
+                      Хирургия
+
+                      <span class="icon accordion-button-icon">
+                        <svg>
+                          <use xlink:href="img/icons/chevron-up.svg#svg-chevron-up"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="collapse-favors-5" class="accordion-collapse collapse"
+                    data-bs-parent="#accordion-favors">
+                    <div class="accordion-body">
+                      <div class="accordion-body-content">
+                        <picture>
+                          <source srcset="img/favors/image-5.webp" type="image/webp">
+                          <img loading="lazy" src="img/favors/image-5.png" class="image" width="100" height="100" alt="Картинка">
+                        </picture>
+
+                        <ul class="list">
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Удаление постоянного зуба А16.07.001.002 Удаление постоянного зуба
+                              </span>
+
+                              <span>
+                                10 600 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Удаление зуба сложное А16.07.001.003 Удаление зуба сложное с разъединением корней
+                              </span>
+
+                              <span>
+                                16 300 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Внутрикостная дентальная имплантация Dentium Implantium SuperLine/MIS/аналоги
+                              </span>
+
+                              <span>
+                                59 700 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Внутрикостная дентальная имплантация Astra Tech/Nobel Biocare/Straumann/Xive/аналоги
+                              </span>
+
+                              <span>
+                                84 500 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                КОМПЛЕКС: установка имплантата Implantium — Ю. Корея, установка формирователя десны, коронка на основе оксида циркония
+                              </span>
+
+                              <span>
+                                115 600 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                КОМПЛЕКС: установка имплантата Astra Tech — Швеция, установка формирователя десны, коронка на основе оксида циркония
+                              </span>
+
+                              <span>
+                                159 200 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                КОМПЛЕКС: установка имплантата Straumann — Швейцария, установка формирователя десны, коронка на основе оксида циркония
+                              </span>
+
+                              <span>
+                                159 200 ₽
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="favors-item">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse-favors-6"
+                      aria-expanded="false"
+                      aria-controls="collapse-favors-6">
+                      Протезирование
+
+                      <span class="icon accordion-button-icon">
+                        <svg>
+                          <use xlink:href="img/icons/chevron-up.svg#svg-chevron-up"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="collapse-favors-6" class="accordion-collapse collapse"
+                    data-bs-parent="#accordion-favors">
+                    <div class="accordion-body">
+                      <div class="accordion-body-content">
+                        <picture>
+                          <source srcset="img/favors/image-6.webp" type="image/webp">
+                          <img loading="lazy" src="img/favors/image-6.png" class="image" width="100" height="100" alt="Картинка">
+                        </picture>
+
+                        <ul class="list">
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Коронка металлокерамическая с уступом и плечевой массой
+                              </span>
+
+                              <span>
+                                35 500 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Коронка на основе диоксида циркония/коронка PRETTAU
+                              </span>
+
+                              <span>
+                                85 900 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Керамическая коронка/винир/вкладка по методу E.MAX
+                              </span>
+
+                              <span>
+                                62 300 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Коронка на имплантанте цельнокерамическая / из оксида циркония с винтовой фиксацией PRETTAU
+                              </span>
+
+                              <span>
+                                112 200 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Полный съёмный протез с фиксацией на ball-аттачментах на 2 имплантатах
+                              </span>
+
+                              <span>
+                                178 700 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                КОМПЛЕКС: установка имплантата Implantium — Ю. Корея, установка формирователя десны, коронка на основе оксида циркония
+                              </span>
+
+                              <span>
+                                115 600 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                КОМПЛЕКС: установка имплантата Astra Tech — Швеция, установка формирователя десны, коронка на основе оксида циркония
+                              </span>
+
+                              <span>
+                                159 200 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                КОМПЛЕКС: установка имплантата Straumann — Швейцария, установка формирователя десны, коронка на основе оксида циркония
+                              </span>
+
+                              <span>
+                                159 200 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Второй ортопедический этап реабилитации при полной адентии, с фиксацией постоянного циркониевого протеза на титановой балке на имплантатах на 1 челюсть
+                              </span>
+
+                              <span>
+                                650 000 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                Второй ортопедический этап реабилитации при полной адентии, с фиксацией постоянного композитного протеза на титановой балке на имплантатах на 1 челюсть
+                              </span>
+
+                              <span>
+                                350 000 ₽
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="favors-item">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse-favors-7"
+                      aria-expanded="false"
+                      aria-controls="collapse-favors-7">
+                      Ортодонтия и гнатология
+
+                      <span class="icon accordion-button-icon">
+                        <svg>
+                          <use xlink:href="img/icons/chevron-up.svg#svg-chevron-up"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="collapse-favors-7" class="accordion-collapse collapse"
+                    data-bs-parent="#accordion-favors">
+                    <div class="accordion-body">
+                      <div class="accordion-body-content">
+                        <picture>
+                          <source srcset="img/favors/image-7.webp" type="image/webp">
+                          <img loading="lazy" src="img/favors/image-7.png" class="image" width="100" height="100" alt="Картинка">
+                        </picture>
+
+                        <ul class="list">
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                4449 Ортодонтическая коррекция съемным ортодонтическим аппаратом, суставная шина А16.07.047
+                              </span>
+
+                              <span>
+                                43 620 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                4437 Ортодонтическая коррекция съемным ортодонтическим аппаратом, изготовление съемного аппарата 3-ей степени сложности А16.07.047
+                              </span>
+
+                              <span>
+                                55 450 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                4429 Ортодонтическая коррекция съемным ортодонтическим аппаратом, припасовка съемного аппарата 1-й степени сложности А16.07.047
+                              </span>
+
+                              <span>
+                                2 770 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                007 Высокоточное сканированиеодного зубного ряда интраоральным сканером В013.066.002 Высокоточное сканированиеодного зубного ряда интраоральным сканером
+                              </span>
+
+                              <span>
+                                4 900 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                300 Изготовление диагностических моделей А23.07.002.027 Изготовление контрольной модели
+                              </span>
+
+                              <span>
+                                3 700 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                400 Диагностика (снятие оттисков, фотопротокол, составление плана ортодонтической коррекции) А02.07.010 Исследование на диагностических моделях челюстей
+                              </span>
+
+                              <span>
+                                6 400 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                4470 Ортодонтическая коррекция съемным ортодонтическим аппаратом, Ortho-Check 3D — диагностика А16.07.047
+                              </span>
+
+                              <span>
+                                48 370 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                473 Star Smile full от 21 до 36 элайнеров (коррекции включены) А 16.07.047 Ортопедическая коррекция съёмным ортодонтическим аппаратом
+                              </span>
+
+                              <span>
+                                326 000 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                474 Star Smil Max от 37 штук (коррекции включены) А 16.07.047 Ортопедическая коррекция съёмным ортодонтическим аппаратом
+                              </span>
+
+                              <span>
+                                368 700 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                480 Супер длинный курс (более 50 этапов, 4 коррекции) А 16.07.047 Ортопедическая коррекция съёмным ортодонтическим аппаратом
+                              </span>
+
+                              <span>
+                                448 100 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                481 Полный курс (менее 50 этапов, 3 коррекции) А 16.07.047 Ортопедическая коррекция съёмным ортодонтическим аппаратом
+                              </span>
+
+                              <span>
+                                355 400 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                405 Фиксация брекета лингвальной кнопки на 1 зуб А16.07.048 Ортодонтическая коррекция с применением брекет-систем
+                              </span>
+
+                              <span>
+                                6 200 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                406 Фиксация брекет-системы безлигатурной керамической (DAMON CLEAR) — 1 зубной ряд А16.07.048 Ортодонтическая коррекция с применением брекет-систем
+                              </span>
+
+                              <span>
+                                154 500 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                407 Фиксация брекет-системы безлигатурной металлической (DAMON Q) — 1 зубной ряд А16.07.048 Ортодонтическая корреция с применением брекет-систем
+                              </span>
+
+                              <span>
+                                139 100 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                408 Фиксация брекет-системы лигатурной/ безлигатурной керамической — 1 зубной ряд А16.07.048 Ортодонтическая корреция с применением брекет-систем
+                              </span>
+
+                              <span>
+                                134 500 ₽
+                              </span>
+                            </div>
+                          </li>
+                          <li class="list-item">
+                            <div class="list-item-content">
+                              <span>
+                                409 Фиксация брекет-системы лигатурной /безлигатурной металлической — 1 зубной ряд А16.07.048 Ортодонтическая корреция с применением брекет-систем
+                              </span>
+
+                              <span>
+                                113 800 ₽
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section action">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="text-color-primary text-placeholder">
+                  Акция
+                </span>
+              </h2>
+            </div>
+
+            <div class="action-content">
+              <div class="action-content-item">
+                <h3 class="action-content-title">
+                  Познакомьтесь с преимуществами коллегиального плана лечения
+                </h3>
+
+                <div class="action-content-body">
+                  <div class="action-content-prices">
+                    <span class="action-content-discount">
+                      6 200₽
+                    </span>
+                    <span class="action-content-cost">
+                      5 200₽
+                    </span>
+                  </div>
+
+                  <button type="button" class="btn btn-xl btn-primary action-content-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-form">
+                    Записаться на консультацию
+                  </button>
+                </div>
+              </div>
+
+              <div class="action-content-item">
+                <h3 class="action-content-title">
+                  Поддержка специалистов из смежных дисциплин
+                </h3>
+
+                <div class="action-content-pictures">
+                  <picture class="action-content-picture">
+                    <source srcset="img/action/person-1.webp" type="image/webp">
+                    <img loading="lazy" src="img/action/person-1.png" class="action-content-image" width="120" height="120" alt="Картинка">
+                  </picture>
+                  <picture class="action-content-picture">
+                    <source srcset="img/action/person-2.webp" type="image/webp">
+                    <img loading="lazy" src="img/action/person-2.png" class="action-content-image" width="120" height="120" alt="Картинка">
+                  </picture>
+                  <picture class="action-content-picture">
+                    <source srcset="img/action/person-3.webp" type="image/webp">
+                    <img loading="lazy" src="img/action/person-3.png" class="action-content-image" width="120" height="120" alt="Картинка">
+                  </picture>
+
+                  <div class="action-content-quantity">
+                    +15
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section tech">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="text-color-secondary">
+                  Современная стоматлогия
+                </span>
+              </h2>
+
+              <p class="section-subtitle">
+                Наши врачи обеспечивают лечение высокого уровня, применяя новейшие достижения в области стоматологии и методы доказательной медицины.
+              </p>
+            </div>
+
+            <div class="swiper-container tech-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <article class="tech-swiper-item">
+                      <img loading="lazy" src="img/icons/tech.svg" class="tech-swiper-image" width="60" height="60" alt="Картинка">
+
+                      <p class="tech-swiper-text">
+                        Для максимально точного лечения используем дентальный микроскоп
+                      </p>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article class="tech-swiper-item">
+                      <img loading="lazy" src="img/icons/teeth.svg" class="tech-swiper-image" width="60" height="60" alt="Картинка">
+
+                      <p class="tech-swiper-text">
+                        Высокотехнологичные и безопасные методы диагностики
+                      </p>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article class="tech-swiper-item">
+                      <img loading="lazy" src="img/icons/call-2.svg" class="tech-swiper-image" width="60" height="60" alt="Картинка">
+
+                      <p class="tech-swiper-text">
+                        Мы всегда на связи для каждого пациента
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="tech-content">
+              <span class="blob-blur"></span>
+
+              <div class="tech-content-header">
+                <h3 class="tech-content-title">
+                  Передовые технологии
+                </h3>
+                <p class="tech-content-subtitle">
+                  Наши клиники применяют только новейшие медицинские технологии для диагностики, лечения и профилактики.
+                </p>
+              </div>
+
+              <ul class="list-reset tech-list">
+                <li class="tech-item">
+                  <div class="tech-item-info">
+                    <h4 class="tech-item-title">
+                      Прицельные и панорамные ренгеновские снимки и КТ
+                    </h4>
+                  </div>
+
+                  <picture>
+                    <source srcset="img/tech/image-1.webp" type="image/webp">
+                    <img loading="lazy" src="img/tech/image-1.png" class="tech-item-image" width="140" height="140" alt="Картинка">
+                  </picture>
+                </li>
+                <li class="tech-item">
+                  <div class="tech-item-info">
+                    <h4 class="tech-item-title">
+                      Вкладки, коронки
+                    </h4>
+                    <p class="tech-item-subtitle">
+                      И другие способы протезирования для восстановления зубного ряда.
+                    </p>
+                  </div>
+
+                  <picture>
+                    <source srcset="img/tech/image-2.webp" type="image/webp">
+                    <img loading="lazy" src="img/tech/image-2.png" class="tech-item-image" width="" height="" alt="Картинка">
+                  </picture>
+                </li>
+                <li class="tech-item">
+                  <div class="tech-item-info">
+                    <h4 class="tech-item-title">
+                      Высокоточное сканирование
+                    </h4>
+                  </div>
+
+                  <picture>
+                    <source srcset="img/tech/image-3.webp" type="image/webp">
+                    <img loading="lazy" src="img/tech/image-3.png" class="tech-item-image" width="90" height="90" alt="Картинка">
+                  </picture>
+                </li>
+                <li class="tech-item">
+                  <div class="tech-item-info">
+                    <h4 class="tech-item-title">
+                      Цифровое планирование лечения и сканирования
+                    </h4>
+                  </div>
+
+                  <picture>
+                    <source srcset="img/tech/image-4.webp" type="image/webp">
+                    <img loading="lazy" src="img/tech/image-4.png" class="tech-item-image" width="135" height="135" alt="Картинка">
+                  </picture>
+                </li>
+                <li class="tech-item">
+                  <div class="tech-item-info">
+                    <h4 class="tech-item-title">
+                      Микроскоп
+                    </h4>
+                  </div>
+
+                  <picture>
+                    <source srcset="img/tech/image-5.webp" type="image/webp">
+                    <img loading="lazy" src="img/tech/image-5.png" class="tech-item-image" width="75" height="75" alt="Картинка">
+                  </picture>
+                </li>
+                <li class="tech-item">
+                  <div class="tech-item-info">
+                    <h4 class="tech-item-title">
+                      Применяем современны протокол для оценки функции височно-нижнечелюстной сустав
+                    </h4>
+                  </div>
+
+                  <picture>
+                    <source srcset="img/tech/image-6.webp" type="image/webp">
+                    <img loading="lazy" src="img/tech/image-6.png" class="tech-item-image" width="175" height="175" alt="Картинка">
+                  </picture>
+                </li>
+                <li class="tech-item">
+                  <div class="tech-item-info">
+                    <h4 class="tech-item-title">
+                      Профессиональный фотопротокол
+                    </h4>
+                    <p class="tech-item-subtitle">
+                      «До» и «После» — Диагностика глазами доктора
+                    </p>
+                  </div>
+
+                  <picture>
+                    <source srcset="img/tech/image-7.webp" type="image/webp">
+                    <img loading="lazy" src="img/tech/image-7.png" class="tech-item-image" width="105" height="105" alt="Картинка">
+                  </picture>
+                </li>
+                <li class="tech-item">
+                  <div class="tech-item-info">
+                    <h4 class="tech-item-title">
+                      Диагностика
+                    </h4>
+                  </div>
+
+                  <picture>
+                    <source srcset="img/tech/image-8.webp" type="image/webp">
+                    <img loading="lazy" src="img/tech/image-8.png" class="tech-item-image" width="95" height="95" alt="Картинка">
+                  </picture>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section photos">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="text-color-secondary">
+                  Фото клиники
+                </span>
+              </h2>
+            </div>
+
+            <div class="swiper-container photos-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="img/photos/image.webp" type="image/webp">
+                      <img loading="lazy" src="img/photos/image.jpg" class="photos-swiper-image" width="1400" height="500" alt="Картинка">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="img/photos/image.webp" type="image/webp">
+                      <img loading="lazy" src="img/photos/image.jpg" class="photos-swiper-image" width="1400" height="500" alt="Картинка">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="img/photos/image.webp" type="image/webp">
+                      <img loading="lazy" src="img/photos/image.jpg" class="photos-swiper-image" width="1400" height="500" alt="Картинка">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide">
+                    <picture>
+                      <source srcset="img/photos/image.webp" type="image/webp">
+                      <img loading="lazy" src="img/photos/image.jpg" class="photos-swiper-image" width="1400" height="500" alt="Картинка">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-pagination"></div>
+
+              <div class="swiper-navigation">
+                <button type="button" class="btn swiper-button-prev">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/swiper-prev.svg#svg-swiper-prev"></use>
+                    </svg>
+                  </span>
+                </button>
+                <button type="button" class="btn swiper-button-next">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/swiper-next.svg#svg-swiper-next"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="advice">
+              <h3 class="advice-title">
+                Консультация специалиста
+              </h3>
+
+              <button type="button" class="btn btn-xl btn-primary advice-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#modal-form">
+                Записаться
+              </button>
+
+              <div class="advice-info">
+                <p class="advice-info-text">
+                  Или позвоните нам на WhatsApp <a href="tel:+74957349959" class="btn btn-inline text-underline">+7 495 734-99-59</a>
+                </p>
+
+                <picture>
+                  <source srcset="img/photos/person.webp" type="image/webp">
+                  <img loading="lazy" src="img/photos/person.png" class="advice-info-image" width="100" height="100" alt="Картинка">
+                </picture>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section staff">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">
+                Наши врачи
+              </h2>
+            </div>
+
+            <div class="swiper-container staff-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper"></div>
+              </div>
+
+              <div class="swiper-navigation">
+                <button type="button" class="btn swiper-button-prev">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/swiper-prev.svg#svg-swiper-prev"></use>
+                    </svg>
+                  </span>
+                </button>
+                <button type="button" class="btn swiper-button-next">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/swiper-next.svg#svg-swiper-next"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section about">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="text-color-secondary text-placeholder">
+                  О нас
+                </span>
+              </h2>
+            </div>
+
+            <div class="about-content">
+              <picture>
+                <source srcset="img/about/image.webp" type="image/webp">
+                <img loading="lazy" src="img/about/image.jpg" class="about-content-image" width="690" height="450" alt="Картинка">
+              </picture>
+
+              <div class="about-content-item">
+                <h3 class="about-content-title">
+                  В 1996 году на свет появилась наша первая стоматологическая клиника «ДентаВита».
+                </h3>
+
+                <p class="about-content-text">
+                  С тех пор мы стремительно развиваемся, создавая непревзойденные условия для наших пациентов. Наш путь к успеху вымощен благодарностью десятков тысяч людей, чье доверие и отзывы продолжают вдохновлять нас на открытие новых клиник и предоставление услуг самого высокого качества.
+                </p>
+              </div>
+
+              <ol class="list-reset about-content-list">
+                <li class="about-content-list-item">
+                  <div class="about-content-list-item-content"> Врачи высшей категории, кандидаты медицинских наук, обладатели премий ПроДокторов, сотрудники и соискатели кафедр</div>
+                </li>
+                <li class="about-content-list-item">
+                  <div class="about-content-list-item-content">
+                    В наших клиниках есть возможность реализовать любое лечение в условиях седации без страха и боли</div>
+                </li>
+                <li class="about-content-list-item">
+                  <div class="about-content-list-item-content">Все наши клиники расположены в центре Москвы, что позволит сэкономить ваше время</div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="section partners">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">
+                Партнеры по страхованию
+              </h2>
+            </div>
+          </div>
+
+          <div class="ticker partners-ticker">
+            <ul class="list-reset ticker-list">
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-1.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-1.png" class="image" width="199" height="106" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-2.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-2.png" class="image" width="210" height="83" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-3.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-3.png" class="image" width="194" height="66" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-4.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-4.png" class="image" width="205" height="81" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-5.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-5.png" class="image" width="210" height="97" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-6.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-6.png" class="image" width="197" height="120" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-7.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-7.png" class="image" width="220" height="91" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-8.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-8.png" class="image" width="206" height="102" alt="Картинка">
+                </picture>
+              </li>
+            </ul>
+
+            <ul class="list-reset ticker-list">
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-1.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-1.png" class="image" width="199" height="106" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-2.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-2.png" class="image" width="210" height="83" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-3.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-3.png" class="image" width="194" height="66" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-4.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-4.png" class="image" width="205" height="81" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-5.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-5.png" class="image" width="210" height="97" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-6.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-6.png" class="image" width="197" height="120" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-7.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-7.png" class="image" width="220" height="91" alt="Картинка">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="img/partners/image-8.webp" type="image/webp">
+                  <img loading="lazy" src="img/partners/image-8.png" class="image" width="206" height="102" alt="Картинка">
+                </picture>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section reviews">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">
+                Отзывы
+              </h2>
+            </div>
+
+            <div class="swiper-container reviews-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <article class="reviews-swiper-item">
+                      <div class="reviews-swiper-item-start">
+                        <picture class="reviews-swiper-item-picture">
+                          <source srcset="img/reviews/image-1.webp" type="image/webp">
+                          <img loading="lazy" src="img/reviews/image-1.png" class="reviews-swiper-item-image" width="80" height="80" alt="Картинка">
+                        </picture>
+
+                        <p class="reviews-swiper-item-text">Приветливый персонал на ресепшен. Хорошие врачи. Огромное спасибо прекрасному врачу Турчак Татьяне Григорьевне🌹🌹🌹 и её ассистенту 💐. Это потрясающий тандем понимающий друг друга с полу взгляда.</p>
+                      </div>
+                      <div class="reviews-swiper-item-end">
+                        <div class="reviews-swiper-item-quantity"></div>
+                        <div class="reviews-swiper-item-name">Наталья Иванова</div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article class="reviews-swiper-item">
+                      <div class="reviews-swiper-item-start">
+                        <picture class="reviews-swiper-item-picture">
+                          <source srcset="img/reviews/image-2.webp" type="image/webp">
+                          <img loading="lazy" src="img/reviews/image-2.png" class="reviews-swiper-item-image" width="80" height="80" alt="Картинка">
+                        </picture>
+
+                        <p class="reviews-swiper-item-text">Отличная клиника с хорошей атмосферой, в том числе между врачами, работают как один слаженный организм. Князева М. В. — ЛЮБИМЫЙ ВРАЧ, спасла корни зуба, удалось избежать удаления и имплантации. Нормально работают с ДМС</p>
+                      </div>
+                      <div class="reviews-swiper-item-end">
+                        <div class="reviews-swiper-item-quantity"></div>
+                        <div class="reviews-swiper-item-name">Алекса Нора</div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article class="reviews-swiper-item">
+                      <div class="reviews-swiper-item-start">
+                        <picture class="reviews-swiper-item-picture">
+                          <source srcset="img/reviews/image-3.webp" type="image/webp">
+                          <img loading="lazy" src="img/reviews/image-3.png" class="reviews-swiper-item-image" width="80" height="80" alt="Картинка">
+                        </picture>
+
+                        <p class="reviews-swiper-item-text">Отличная клиника с хорошей атмосферой, в том числе между врачами, работают как один слаженный организм. Князева М. В. — ЛЮБИМЫЙ ВРАЧ, спасла корни зуба, удалось избежать удаления и имплантации. Нормально работают с ДМС</p>
+                      </div>
+                      <div class="reviews-swiper-item-end">
+                        <div class="reviews-swiper-item-quantity"></div>
+                        <div class="reviews-swiper-item-name">Алекса Нора</div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article class="reviews-swiper-item">
+                      <div class="reviews-swiper-item-start">
+                        <picture class="reviews-swiper-item-picture">
+                          <source srcset="img/reviews/image-1.webp" type="image/webp">
+                          <img loading="lazy" src="img/reviews/image-1.png" class="reviews-swiper-item-image" width="80" height="80" alt="Картинка">
+                        </picture>
+
+                        <p class="reviews-swiper-item-text">Приветливый персонал на ресепшен. Хорошие врачи. Огромное спасибо прекрасному врачу Турчак Татьяне Григорьевне🌹🌹🌹 и её ассистенту 💐. Это потрясающий тандем🫶 понимающий друг друга с полу взгляда.</p>
+                      </div>
+                      <div class="reviews-swiper-item-end">
+                        <div class="reviews-swiper-item-quantity"></div>
+                        <div class="reviews-swiper-item-name">Наталья Иванова</div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article class="reviews-swiper-item">
+                      <div class="reviews-swiper-item-start">
+                        <picture class="reviews-swiper-item-picture">
+                          <source srcset="img/reviews/image-2.webp" type="image/webp">
+                          <img loading="lazy" src="img/reviews/image-2.png" class="reviews-swiper-item-image" width="80" height="80" alt="Картинка">
+                        </picture>
+
+                        <p class="reviews-swiper-item-text">Отличная клиника с хорошей атмосферой, в том числе между врачами, работают как один слаженный организм. Князева М. В. — ЛЮБИМЫЙ ВРАЧ, спасла корни зуба, удалось избежать удаления и имплантации. Нормально работают с ДМС</p>
+                      </div>
+                      <div class="reviews-swiper-item-end">
+                        <div class="reviews-swiper-item-quantity"></div>
+                        <div class="reviews-swiper-item-name">Алекса Нора</div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article class="reviews-swiper-item">
+                      <div class="reviews-swiper-item-start">
+                        <picture class="reviews-swiper-item-picture">
+                          <source srcset="img/reviews/image-3.webp" type="image/webp">
+                          <img loading="lazy" src="img/reviews/image-3.png" class="reviews-swiper-item-image" width="80" height="80" alt="Картинка">
+                        </picture>
+
+                        <p class="reviews-swiper-item-text">Отличная клиника с хорошей атмосферой, в том числе между врачами, работают как один слаженный организм. Князева М. В. — ЛЮБИМЫЙ ВРАЧ, спасла корни зуба, удалось избежать удаления и имплантации. Нормально работают с ДМС</p>
+                      </div>
+                      <div class="reviews-swiper-item-end">
+                        <div class="reviews-swiper-item-quantity"></div>
+                        <div class="reviews-swiper-item-name">Алекса Нора</div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-navigation">
+                <button type="button" class="btn swiper-button-prev">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/swiper-prev.svg#svg-swiper-prev"></use>
+                    </svg>
+                  </span>
+                </button>
+                <button type="button" class="btn swiper-button-next">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/swiper-next.svg#svg-swiper-next"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section callback">
+          <div class="container">
+            <div class="callback-content">
+              <div class="callback-contacts">
+                <h2 class="callback-title">
+                  Добро пожаловать <span class="text-color-secondary">в ДентаВита</span>
+                </h2>
+
+                <h3 class="callback-contacts-title">
+                  Контакты
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/phone.svg#svg-phone"></use>
+                    </svg>
+                  </span>
+                </h3>
+
+                <ul class="list-reset callback-contacts-list">
+                  <li class="callback-contacts-item">
+                    <h4 class="callback-contacts-item-title">
+                      Хлебный переулок
+                    </h4>
+                    <address class="callback-contacts-item-address">
+                      Хлебный переулок, д. 2/3 стр. 1:
+                    </address>
+                    <p class="callback-contacts-item-phones">
+                      Тел.:
+                      <span class="callback-contacts-item-phone">
+                        <a href="tel:+74957349959" class="btn btn-inherit">+7 495 734-99-59</a>
+                      </span>
+                    </p>
+                  </li>
+                  <li class="callback-contacts-item">
+                    <h4 class="callback-contacts-item-title">
+                      На Красных Воротах
+                    </h4>
+                    <address class="callback-contacts-item-address">
+                      Большой Козловский пер., д. 7
+                    </address>
+                    <p class="callback-contacts-item-phones">
+                      Тел.:
+                      <span class="callback-contacts-item-phone">
+                        <a href="tel:+74952296720" class="btn btn-inherit">+7 495 229-67-20</a>
+                        <a href="tel:+74952296710" class="btn btn-inherit">+7 495 229-67-10</a>
+                      </span>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <form class="callback-form">
+                <div class="field-control">
+                  <div class="fieldset">
+                    <input type="text" class="field" name="name" placeholder="Введите имя" required>
+                  </div>
+                </div>
+                <div class="field-control">
+                  <div class="fieldset">
+                    <input type="tel" class="field" name="phone" placeholder="Ваш телефон" required>
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="policy">
+                    <span>Соглашаюсь на обработку персональных данных</span>
+                  </label>
+                </div>
+
+                <div class="form-footer">
+                  <button type="submit" class="btn btn-xl btn-primary btn-submit">
+                    Записаться на консультацию
+                  </button>
+
+                  <a href="#" class="btn btn-xl btn-icon">
+                    <span class="icon">
+                      <svg>
+                        <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+
+                <picture>
+                  <source srcset="img/callback/image-1.webp" type="image/webp">
+                  <img loading="lazy" src="img/callback/image-1.png" class="callback-form-image" width="445" height="576" alt="Картинка">
+                </picture>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div data-transfer-target="button-fixed"></div>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-navigation">
+  <div class="offcanvas-header">
+    <button type="button" class="btn btn-base btn-icon btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            <span class="icon">
+                <svg>
+                    <use xlink:href="img/icons/close.svg#svg-close"></use>
+                </svg>
+            </span>
+        </button>
+  </div>
+  <div class="offcanvas-body"
+		data-transfer-target="navbar-nav">
+
+  </div>
+
+    <div class="offcanvas-footer"
+		data-transfer-target="navbar-buttons header-top-end">
+
+    </div>
+</div>
+      <div class="modal modal-form fade" id="modal-form" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span class="icon">
+                    <svg>
+                        <use xlink:href="img/icons/close.svg#svg-close"></use>
+                    </svg>
+                </span>
+            </button>
+
+            <div class="modal-body">
+                <form>
+                    <h2 class="form-title">
+                        Заказать звонок
+                    </h2>
+
+                    <div class="field-control">
+                        <div class="fieldset">
+                            <input type="text" class="field" name="name" placeholder="Введите имя" required>
+                        </div>
+                    </div>
+                    <div class="field-control">
+                        <div class="fieldset">
+                            <input type="tel" class="field" name="phone" placeholder="Ваш телефон" required>
+                        </div>
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="policy">
+                            <span>Соглашаюсь на обработку персональных данных</span>
+                        </label>
+                    </div>
+
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-xl btn-primary btn-submit">
+                            Записаться на консультацию
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-main-top"
+        data-transfer-target="btn-up">
+        <a href="#" class="brand">
+          <picture>
+            <source srcset="img/logo.webp" type="image/webp">
+            <img loading="lazy" src="img/logo.png" class="image" width="40" height="40" alt="Лого">
+          </picture>
+          <span>
+            ДентаВита
+          </span>
+        </a>
+      </div>
+
+      <div class="footer-main-navbar">
+        <ul class="list-reset navbar-nav">
+          <li class="nav-item">
+            <h3 class="nav-item-title">
+              Меню
+            </h3>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="btn nav-link">
+              Усулги
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="btn nav-link">
+              Акции
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="btn nav-link">
+              Преимущества
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="btn nav-link">
+              О нас
+            </a>
+          </li>
+        </ul>
+        <ul class="list-reset navbar-nav">
+          <li class="nav-item is-invisible">
+            <h3 class="nav-item-title">
+              Меню
+            </h3>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="btn nav-link">
+              Наши технологии
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="btn nav-link">
+              Фото
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="btn nav-link">
+              Врачи
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-main-socials">
+        <ul class="list-reset navbar-nav">
+          <li class="nav-item">
+            <h3 class="nav-item-title">
+              Социальные сети
+            </h3>
+          </li>
+          <li class="nav-item">
+            <ul class="list-reset navbar-socials">
+              <li class="nav-item">
+                <a href="#" class="btn nav-link">
+                  <img loading="lazy" src="img/icons/whatsapp-image.svg" class="image" width="24" height="24" alt="Картинка">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="btn nav-link">
+                  <img loading="lazy" src="img/icons/telegram.svg" class="image" width="24" height="24" alt="Картинка">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="btn nav-link">
+                  <img loading="lazy" src="img/icons/youtube.svg" class="image" width="24" height="24" alt="Картинка">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="btn nav-link">
+                  <img loading="lazy" src="img/icons/instagram.svg" class="image" width="24" height="24" alt="Картинка">
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <p class="footer-main-hint">
+              Социальная сеть Instagram принадлежит компании Meta Platforms Inc., которая запрещена на территории РФ
+            </p>
+          </li>
+        </ul>
+
+        <a href="#" class="btn btn-up"
+          data-transfer-origin="btn-up"
+          data-transfer-breakpoint="992">
+          <span class="icon">
+            <svg>
+              <use xlink:href="img/icons/arrow-up.svg#svg-arrow-up"></use>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © ООО «ДентаВита Плюс». Все права защищены
+        <br>
+        Есть противопоказания. Прокансультируйтесь с врачом.
+      </p>
+
+      <ul class="list-reset navbar-nav">
+        <li class="nav-item">
+          <a href="#" class="btn nav-link">
+            Лицензии
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="btn nav-link">
+            Политика конфиденциальности
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>
