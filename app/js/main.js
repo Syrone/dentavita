@@ -5743,6 +5743,7 @@ document.querySelectorAll('.photos-swiper')?.forEach(element => {
   new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](element.querySelector('.swiper'), {
     slidesPerView: 'auto',
     spaceBetween: 20,
+    autoHeight: true,
     pagination: {
       el: element.querySelector('.swiper-pagination'),
       clickable: true
@@ -21006,3 +21007,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
+//# sourceMappingURL=main.js.map
