@@ -34,7 +34,7 @@ try {
   // Настройки вашей почты
   $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
   $mail->Username   = 'sintez.digital@mail.ru'; // Логин на почте
-  $mail->Password   = 'jTP56zxdN8V5fccJqUTP'; // Пароль на почте
+  $mail->Password   = 'GvqxCUZursykNcYyzrhR'; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
