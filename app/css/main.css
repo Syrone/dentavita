@@ -2882,11 +2882,7 @@ textarea {
   height: 100%;
   display: block;
   border-radius: 0.625rem;
-}
-@media (min-width: 992px) {
-  .photos-swiper-image {
-    min-height: 31.25rem;
-  }
+  aspect-ratio: 16/9;
 }
 .photos-swiper .swiper-navigation {
   display: none;

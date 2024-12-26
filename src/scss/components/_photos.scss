@@ -19,10 +19,7 @@
 			height: 100%;
 			display: block;
 			border-radius: .625rem;
-
-			@media (min-width: 992px) {
-				min-height: 31.25rem;
-			}
+			aspect-ratio: 16 / 9;
 		}
 
 		.swiper-navigation {
