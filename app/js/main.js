@@ -10700,7 +10700,7 @@ hiddenInputs?.forEach(input => {
   }
 });
 const rules = [{
-  ruleSelector: 'input[type="text"]',
+  ruleSelector: 'input[name="name"]',
   rules: [{
     rule: 'minLength',
     value: 3,
@@ -10717,6 +10717,12 @@ const rules = [{
     rule: 'required',
     value: true,
     errorMessage: 'Обязательное поле'
+  }]
+}, {
+  ruleSelector: 'input[name="policy"]',
+  rules: [{
+    rule: 'required',
+    errorMessage: 'Вы должны согласиться с условиями'
   }]
 }];
 const afterForm = () => {
