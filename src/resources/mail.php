@@ -41,6 +41,7 @@ try {
   $mail->setFrom('', 'Заявка с Dentavita'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
+  $mail->addAddress('sintez.digital@mail.ru');
   $mail->addAddress('prestige@dentavita.ru');
   $mail->addAddress('Vorota@dentavita.ru');
 
