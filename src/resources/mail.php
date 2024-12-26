@@ -4,12 +4,12 @@ require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
-$title = "Тема письма";
+$title = "Заявка c сайта - Dentavita";
 $file = $_FILES['file'];
 
 $c = true;
 // Формирование самого письма
-$title = "Заголовок письма";
+$title = "Заявка на консультацию";
 foreach ( $_POST as $key => $value ) {
   if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
     $body .= "
@@ -32,16 +32,17 @@ try {
   $mail->SMTPAuth   = true;
 
   // Настройки вашей почты
-  $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-  $mail->Username   = ''; // Логин на почте
-  $mail->Password   = ''; // Пароль на почте
+  $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
+  $mail->Username   = 'sintez.digital@mail.ru'; // Логин на почте
+  $mail->Password   = 'jTP56zxdN8V5fccJqUTP'; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('', 'Заявка с Dentavita'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('');
+  $mail->addAddress('prestige@dentavita.ru');
+  $mail->addAddress('Vorota@dentavita.ru');
 
   // Прикрипление файлов к письму
   if (!empty($file['name'][0])) {

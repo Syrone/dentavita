@@ -1,4 +1,5 @@
 import './components/header.js'
+import './components/form.js'
 import './components/renderCard.js'
 import './components/renderModals.js'
 import './components/transfer.js'

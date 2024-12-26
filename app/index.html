@@ -715,7 +715,7 @@
         <a href="index.html" class="btn btn-inherit is-active text-underline">
           На Красных Воротах
         </a>
-        <a href="subindex.html" class="btn btn-inherit">
+        <a href="subindex.html?source_address=second-address" class="btn btn-inherit">
           Хлебный переулок
         </a>
       </p>
@@ -2565,7 +2565,8 @@
                 </ul>
               </div>
 
-              <form class="callback-form">
+              <form class="js-form-validate callback-form">
+                <input type="hidden" name="source_address" required>
                 <div class="field-control">
                   <div class="fieldset">
                     <input type="text" class="field" name="name" placeholder="Введите имя" required>
@@ -2647,6 +2648,7 @@
                         Заказать звонок
                     </h2>
 
+                    <input type="hidden" name="source_address" required>
                     <div class="field-control">
                         <div class="fieldset">
                             <input type="text" class="field" name="name" placeholder="Введите имя" required>
