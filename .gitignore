@@ -1,2 +1,4 @@
 /node_modules
 package-lock.json
+app/mail.php
+src/resources/mail.php

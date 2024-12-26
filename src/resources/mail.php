@@ -38,6 +38,7 @@ try {
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
+
   $mail->setFrom('sintez.digital@mail.ru', 'Заявка с Dentavita'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
