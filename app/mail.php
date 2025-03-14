@@ -32,19 +32,19 @@ try {
   $mail->SMTPAuth   = true;
 
   // Настройки вашей почты
-  $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
-  $mail->Username   = 'sintez.digital@mail.ru'; // Логин на почте
-  $mail->Password   = 'Merekina1961@'; // Пароль на почте
+  $mail->Host       = 'mail.dentavita.ru'; // SMTP сервера вашей почты
+  $mail->Username   = 'site@chipodent.ru'; // Логин на почте
+  $mail->Password   = "uV^9j3!'cO"; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
 
-  $mail->setFrom('sintez.digital@mail.ru', 'Заявка с Dentavita'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('site@chipodent.ru', 'Заявка с Dentavita'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('sintez.digital@mail.ru');
-  $mail->addAddress('prestige@dentavita.ru');
-  $mail->addAddress('Vorota@dentavita.ru');
+  $mail->addAddress('site@chipodent.ru');
+  // $mail->addAddress('prestige@dentavita.ru');
+  // $mail->addAddress('Vorota@dentavita.ru');
 
   // Прикрипление файлов к письму
   if (!empty($file['name'][0])) {

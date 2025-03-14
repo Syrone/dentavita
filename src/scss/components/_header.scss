@@ -15,7 +15,7 @@
 			align-items: center;
 			gap: 1rem;
 		}
-		
+
 		&-start,
 		&-end {
 			display: flex;
@@ -53,10 +53,46 @@
 			padding-block: 1.25rem;
 		}
 
+    &-nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    &-contacts {
+
+      &:empty {
+        display: none;
+      }
+
+      .header-top-end {
+        font-size: .75rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        text-align: end;
+
+        @media (min-width: 992px) {
+          font-size: var(--fs-base);
+        }
+
+        span {
+          display: none;
+        }
+
+        .header-phone {
+          --_fs: .875rem;
+
+          @media (min-width: 992px) {
+            --_fs: 1.125rem;
+          }
+        }
+      }
+    }
+
 		> .container {
 			display: flex;
 			align-items: center;
-			gap: 1.5rem;
+			gap: .75rem;
 
 			@media (min-width: 992px) {
 				gap: 2rem;
@@ -72,6 +108,7 @@
 		}
 
 		.btn-menu {
+      margin-left: .5rem;
 
 			@media (min-width: 1200px) {
 				display: none;
@@ -86,8 +123,6 @@
 
 	.btn-menu {
 		--_icon-size: 1.5rem;
-
-		margin-left: auto;
 	}
 
 	.navbar-buttons {

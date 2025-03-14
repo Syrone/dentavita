@@ -18,7 +18,7 @@ export const validateForms = (selector, rules, afterSend) => {
     const telSelector = form.querySelector('input[type="tel"]');
 
     if (telSelector) {
-      const inputMask = new Inputmask('+7 (999) 999-99-99');
+      const inputMask = new Inputmask('+7 (999)9999999');
       inputMask.mask(telSelector);
     }
 
@@ -63,13 +63,8 @@ export const validateForms = (selector, rules, afterSend) => {
 
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            if (afterSend) {
-              afterSend(ev.target);
-            }
-            console.log('Отправлено');
-          } else {
-            console.error('Ошибка при отправке формы');
+          if (afterSend) {
+            afterSend(ev.target, xhr.status)
           }
         }
       };

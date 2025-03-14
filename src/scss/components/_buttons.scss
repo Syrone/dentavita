@@ -136,7 +136,7 @@
 
 	--_border-color-hover: var(--_border-color);
 	--_border-color-active: var(--_border-color);
-	
+
 	flex-shrink: 0;
 
 	@media (min-width: 992px) {
@@ -167,7 +167,7 @@
 	--_lh: inherit;
 	--_ls: inherit;
 	--_color: inherit;
-	
+
 	display: inline;
 	text-transform: initial;
 }
@@ -217,11 +217,17 @@
 			--_icon-size: 4.375rem;
 		}
 	}
-	
+
 	@media (min-width: 992px) {
 		--_height: 4.375rem;
 		--_fs: 1.5rem;
 		--_rounded: 1rem;
 		--_padding: .5rem 1.25rem;
 	}
+}
+
+.btn-icon-inverse {
+  --_icon-color: var(--_bg);
+  --_icon-color-hover: var(--_bg-hover);
+  --_icon-color-active: var(--_bg-active);
 }

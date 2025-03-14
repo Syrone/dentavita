@@ -47,7 +47,7 @@
   // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
   // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
   // See also https://github.com/twbs/bootstrap/issues/17695
-  
+
   @media (min-width: 992px) {
     --bs-modal-padding: 2rem;
   }
@@ -67,6 +67,10 @@
       top: 2rem;
       right: 2rem;
     }
+  }
+
+  .form-title {
+    padding-inline: 2rem;
   }
 }
 
@@ -328,7 +332,7 @@
     @media (min-width: 992px)  {
       padding-block: .625rem;
     }
-  
+
     &:last-child {
       border-bottom: 1px solid #D3D6E6;
     }
@@ -381,7 +385,8 @@
   }
 }
 
-.modal-form {
+.modal-form,
+.modal-thanks {
   --bs-modal-width: 37.5rem;
   --bs-modal-padding: 2rem .625rem;
 
@@ -392,9 +397,19 @@
   .modal-body {
     min-height: initial;
   }
+}
+
+.modal-form {
 
   form {
     width: 100%;
+  }
+}
+
+.modal-thanks  {
+
+  .modal-body {
+    flex-direction: column;
   }
 }
 

@@ -8,10 +8,10 @@
           </svg>
         </span>
         Клиника:
-        <a href="index.html" class="btn btn-inherit is-active text-underline">
+        <a href="index.html" class="btn btn-inherit @if(subindex === false){is-active text-underline}">
           На Красных Воротах
         </a>
-        <a href="subindex.html?source_address=second-address" class="btn btn-inherit">
+        <a href="subindex.html?source_address=second-address" class="btn btn-inherit @if(subindex === true){is-active text-underline}">
           Хлебный переулок
         </a>
       </p>
@@ -19,7 +19,7 @@
       <p class="header-top-end"
         data-transfer-origin="header-top-end"
         data-transfer-breakpoint="1200">
-        <span class="text-color-gray">Пн-Пт. с 8:00 до 21:00</span>
+        <span class="text-color-gray">Пн-Пт. с 9:00 до 21:00</span>
 
         <a href="tel:+74957349959" class="btn header-phone">
           +7 495 734 99 59
@@ -39,87 +39,92 @@
         </span>
       </a>
 
-      <ul class="list-reset navbar-nav"
-        data-transfer-origin="navbar-nav"
-        data-transfer-breakpoint="1200">
-        <li class="nav-item">
-          <button type="button" class="btn nav-link"
-            data-scroll-target="#section1"
-            data-bs-dismiss="offcanvas">
-            Услуги
-          </button>
-        </li>
-        <li class="nav-item">
-          <button type="button" class="btn nav-link"
-            data-scroll-target="#section2"
-            data-bs-dismiss="offcanvas">
-            Акции
-          </button>
-        </li>
-        <li class="nav-item">
-          <button type="button" class="btn nav-link"
-            data-scroll-target="#section3"
-            data-bs-dismiss="offcanvas">
-            Преимущества
-          </button>
-        </li>
-        <li class="nav-item">
-          <button type="button" class="btn nav-link"
-            data-scroll-target="#section4"
-            data-bs-dismiss="offcanvas">
-            Методы лечения
-          </button>
-        </li>
-        <li class="nav-item">
-          <button type="button" class="btn nav-link"
-            data-scroll-target="#section5"
-            data-bs-dismiss="offcanvas">
-            Фото
-          </button>
-        </li>
-        <li class="nav-item">
-          <button type="button" class="btn nav-link"
-            data-scroll-target="#section6"
-            data-bs-dismiss="offcanvas">
-            Врачи
-          </button>
-        </li>
-        <li class="nav-item">
-          <button type="button" class="btn nav-link"
-            data-scroll-target="#section7"
-            data-bs-dismiss="offcanvas">
-            О нас
-          </button>
-        </li>
-      </ul>
+      <nav class="header-main-nav">
+        <ul class="list-reset navbar-nav"
+          data-transfer-origin="navbar-nav"
+          data-transfer-breakpoint="1200">
+          <li class="nav-item">
+            <button type="button" class="btn nav-link"
+              data-scroll-target="#section1"
+              data-bs-dismiss="offcanvas">
+              Услуги
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn nav-link"
+              data-scroll-target="#section2"
+              data-bs-dismiss="offcanvas">
+              Акции
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn nav-link"
+              data-scroll-target="#section3"
+              data-bs-dismiss="offcanvas">
+              Преимущества
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn nav-link"
+              data-scroll-target="#section4"
+              data-bs-dismiss="offcanvas">
+              Методы лечения
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn nav-link"
+              data-scroll-target="#section5"
+              data-bs-dismiss="offcanvas">
+              Фото
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn nav-link"
+              data-scroll-target="#section6"
+              data-bs-dismiss="offcanvas">
+              Врачи
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn nav-link"
+              data-scroll-target="#section7"
+              data-bs-dismiss="offcanvas">
+              О нас
+            </button>
+          </li>
+        </ul>
 
-      <ul class="list-reset navbar-buttons"
-        data-transfer-origin="navbar-buttons"
-        data-transfer-breakpoint="1200"
-        data-transfer-placement="first">
-        <li class="nav-item">
-          <a href="#" class="btn btn-base btn-icon nav-link">
-            <span class="icon">
-              <svg>
-                <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
-              </svg>
-            </span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <button type="button" class="btn btn-base btn-light nav-link"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-form">
-            Записаться
+        <ul class="list-reset navbar-buttons"
+          data-transfer-origin="navbar-buttons"
+          data-transfer-breakpoint="1200"
+          data-transfer-placement="first">
+          <li class="nav-item">
+            <a href="#" class="btn btn-base btn-icon nav-link">
+              <span class="icon">
+                <svg>
+                  <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-base btn-icon-inverse btn-primary nav-link"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-form">
+              Записаться
 
-            <span class="icon">
-              <svg>
-                <use xlink:href="img/icons/plus-circle.svg#svg-plus-circle"></use>
-              </svg>
-            </span>
-          </button>
-        </li>
-      </ul>
+              <span class="icon">
+                <svg>
+                  <use xlink:href="img/icons/plus-circle.svg#svg-plus-circle"></use>
+                </svg>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-main-contacts"
+        data-transfer-target="header-top-end"></div>
 
       <button class="btn btn-menu" type="button"
         data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navigation"

@@ -75,7 +75,6 @@ document.querySelectorAll('.photos-swiper')?.forEach((element) => {
 	new Swiper(element.querySelector('.swiper'), {
 		slidesPerView: 'auto',
 		spaceBetween: 20,
-		autoHeight: true,
 		pagination: {
 			el: element.querySelector('.swiper-pagination'),
 			clickable: true,
