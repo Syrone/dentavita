@@ -1,0 +1,28 @@
+<div class="advice">
+  <h3 class="advice-title">
+    Консультация специалиста
+  </h3>
+
+  <button type="button" class="btn btn-xl btn-primary advice-btn"
+    data-bs-toggle="modal"
+    data-bs-target="#modal-form">
+    Записаться
+  </button>
+
+  <div class="advice-info">
+    <p class="advice-info-text">
+      Или позвоните нам на WhatsApp
+      @if(subindex === true) {
+        <a href="tel:+79160818952" class="btn btn-inline text-underline">+7 916 081 89 52</a>
+      }
+      @if(subindex === false) {
+        <a href="tel:+79161061597" class="btn btn-inline text-underline">+7 916 106-15-97</a>
+      }
+    </p>
+
+    <picture>
+      <source srcset="img/photos/person.webp" type="image/webp">
+      <img loading="lazy" src="img/photos/person.png" class="advice-info-image" width="100" height="100" alt="Картинка">
+    </picture>
+  </div>
+</div>

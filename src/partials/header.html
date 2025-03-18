@@ -21,9 +21,17 @@
         data-transfer-breakpoint="1200">
         <span class="text-color-gray">Пн-Пт. с 9:00 до 21:00</span>
 
-        <a href="tel:+74957349959" class="btn header-phone">
-          +7 495 734 99 59
-        </a>
+        @if(subindex === true) {
+          <a href="tel:+79160818952" class="btn header-phone">
+            +7 916 081 89 52
+          </a>
+        }
+
+        @if(subindex === false) {
+          <a href="tel:+79161061597" class="btn header-phone">
+            +7 916 106-15-97
+          </a>
+        }
       </p>
     </div>
   </div>
@@ -99,7 +107,7 @@
           data-transfer-breakpoint="1200"
           data-transfer-placement="first">
           <li class="nav-item">
-            <a href="#" class="btn btn-base btn-icon nav-link">
+            <a href="@if(subindex === false){https://wa.me/+74957349959}@if(subindex === true){https://wa.me/+79160818952}" target="_blank" class="btn btn-base btn-icon nav-link">
               <span class="icon">
                 <svg>
                   <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
