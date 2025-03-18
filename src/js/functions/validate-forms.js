@@ -1,7 +1,7 @@
 import JustValidate from 'just-validate';
 import Inputmask from "../../../node_modules/inputmask/dist/inputmask.es6.js";
 
-export const validateForms = (selector, rules, afterSend) => {
+export const validateForms = (selector, rules, afterSend, onProcessing) => {
   const forms = document.querySelectorAll(selector);
 
   if (!forms || forms.length === 0) {
@@ -15,11 +15,23 @@ export const validateForms = (selector, rules, afterSend) => {
   }
 
   forms.forEach((form) => {
+    const submitButton = form.querySelector('button[type="submit"]')
     const telSelector = form.querySelector('input[type="tel"]');
 
     if (telSelector) {
       const inputMask = new Inputmask('+7 (999)9999999');
       inputMask.mask(telSelector);
+    }
+
+    if (submitButton) {
+      submitButton.inert = true;
+
+      submitButton.addEventListener('click', () => {
+        const loader = form.querySelector('.loader');
+        loader && loader.classList.remove('is-hidden');
+        form.style.pointerEvents = 'none';
+        setTimeout(() => submitButton.inert = true)
+      })
     }
 
     const formRules = rules.map((item) => {
@@ -51,6 +63,10 @@ export const validateForms = (selector, rules, afterSend) => {
         });
       }
     });
+
+    validation.onValidate(({fields, isValid}) => {
+      onProcessing && onProcessing(form, fields, isValid)
+    })
 
     validation.onSuccess((ev) => {
       let formData = new FormData(ev.target);

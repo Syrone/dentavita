@@ -80,6 +80,10 @@
 		}
 	}
 
+  &[inert] {
+    opacity: .5;
+  }
+
 	.icon {
 		--_size: var(--_icon-size);
 		--_color: var(--_icon-color);

@@ -10725,10 +10725,15 @@ const rules = [{
 }];
 const afterForm = (target, status) => {
   // Находим модальное окно #modal-form
+  const submitButton = target.querySelector('button[type="submit"]');
   const modalForm = document.getElementById('modal-form');
   const modalThanks = document.getElementById('modal-thanks');
   const modalError = document.getElementById('modal-error');
-
+  if (submitButton) {
+    submitButton.inert = true;
+  }
+  target.style.pointerEvents = '';
+  target.querySelector('.loader').classList.add('is-hidden');
   // Закрываем #modal-form, если форма находится внутри него
   if (modalForm && window.modalInstances.has(modalForm)) {
     const modalFormInstance = window.modalInstances.get(modalForm);
@@ -10739,8 +10744,6 @@ const afterForm = (target, status) => {
 
   // Обработка статуса ответа
   if (status === 200) {
-    console.log('Форма успешно отправлена!');
-
     // Инициализируем и открываем модальное окно #modal-thanks
     if (!window.modalInstances.has(modalThanks)) {
       window.initializeModal(modalThanks);
@@ -10748,8 +10751,6 @@ const afterForm = (target, status) => {
     const modalThanksInstance = window.modalInstances.get(modalThanks);
     modalThanksInstance.show();
   } else {
-    console.error(`Ошибка отправки формы. Статус: ${status}`);
-
     // Инициализируем и открываем модальное окно #modal-error
     if (!window.modalInstances.has(modalError)) {
       window.initializeModal(modalError);
@@ -10758,7 +10759,14 @@ const afterForm = (target, status) => {
     modalErrorInstance.show();
   }
 };
-(0,_functions_validate_forms_js__WEBPACK_IMPORTED_MODULE_0__.validateForms)('.js-form-validate', rules, afterForm);
+const onProcessing = (target, fields, isValid) => {
+  const allValid = Object.values(fields).every(field => field.isValid === true);
+  target.querySelector('button[type="submit"]').inert = !allValid;
+  if (isValid === false || isValid === undefined) {
+    target.querySelector('.loader').classList.add('is-hidden');
+  }
+};
+(0,_functions_validate_forms_js__WEBPACK_IMPORTED_MODULE_0__.validateForms)('.js-form-validate', rules, afterForm, onProcessing);
 
 /***/ }),
 
@@ -11539,7 +11547,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/inputmask/dist/inputmask.es6.js */ "./node_modules/inputmask/dist/inputmask.es6.js");
 
 
-const validateForms = (selector, rules, afterSend) => {
+const validateForms = (selector, rules, afterSend, onProcessing) => {
   const forms = document.querySelectorAll(selector);
   if (!forms || forms.length === 0) {
     console.error('Нет таких форм!');
@@ -11550,10 +11558,20 @@ const validateForms = (selector, rules, afterSend) => {
     return false;
   }
   forms.forEach(form => {
+    const submitButton = form.querySelector('button[type="submit"]');
     const telSelector = form.querySelector('input[type="tel"]');
     if (telSelector) {
       const inputMask = new _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__["default"]('+7 (999)9999999');
       inputMask.mask(telSelector);
+    }
+    if (submitButton) {
+      submitButton.inert = true;
+      submitButton.addEventListener('click', () => {
+        const loader = form.querySelector('.loader');
+        loader && loader.classList.remove('is-hidden');
+        form.style.pointerEvents = 'none';
+        setTimeout(() => submitButton.inert = true);
+      });
     }
     const formRules = rules.map(item => {
       // Создаем копию объекта правил для каждой формы
@@ -11581,6 +11599,13 @@ const validateForms = (selector, rules, afterSend) => {
           errorsContainer: parentElement
         });
       }
+    });
+    validation.onValidate(_ref => {
+      let {
+        fields,
+        isValid
+      } = _ref;
+      onProcessing && onProcessing(form, fields, isValid);
     });
     validation.onSuccess(ev => {
       let formData = new FormData(ev.target);

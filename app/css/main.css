@@ -313,6 +313,91 @@ a {
   max-width: var(--container-width);
 }
 
+.loader {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-top: 1.25rem;
+  margin-inline: auto;
+  border: 0.25rem solid;
+  border-color: var(--text-color) var(--text-color) transparent transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-animation: rotation 1s linear infinite;
+  animation: rotation 1s linear infinite;
+}
+.loader::after, .loader::before {
+  content: "";
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 0.25rem solid;
+  border-color: transparent transparent var(--primary) var(--primary);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  -webkit-animation: rotationBack 0.5s linear infinite;
+  animation: rotationBack 0.5s linear infinite;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 2rem;
+  height: 2rem;
+  border-color: var(--text-color) var(--text-color) transparent transparent;
+  -webkit-animation: rotation 1.5s linear infinite;
+  animation: rotation 1.5s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotationBack {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
 .section {
   margin-bottom: 3.75rem;
 }
@@ -482,6 +567,9 @@ a {
 }
 .btn:is(:active, .is-active) .icon {
   --_color: var(--_icon-color-active);
+}
+.btn[inert] {
+  opacity: 0.5;
 }
 .btn .icon {
   --_size: var(--_icon-size);
